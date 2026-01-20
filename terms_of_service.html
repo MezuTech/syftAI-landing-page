@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Syft AI</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            surface: 'var(--brand-surface)',
+                            card: 'var(--brand-card)',
+                            onSurface: 'var(--brand-on-surface)',
+                            muted: 'var(--brand-muted)',
+                            divider: 'var(--brand-divider)',
+                            primary: 'var(--brand-primary)',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --brand-surface: #ffffff;
+            --brand-card: #f9fafb;
+            --brand-on-surface: #111827;
+            --brand-muted: #6b7280;
+            --brand-divider: #e5e7eb;
+            --brand-primary: #4f46e5;
+        }
+
+        .dark {
+            --brand-surface: #1A1A2E;
+            --brand-card: #1F1F3A;
+            --brand-on-surface: #E4E4E7;
+            --brand-muted: #9CA3AF;
+            --brand-divider: #374151;
+            --brand-primary: #6366f1;
+        }
+
+        body { 
+            background-color: var(--brand-surface); 
+            color: var(--brand-on-surface); 
+            font-family: 'Inter', sans-serif;
+        }
+        
+        h2 { font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; color: var(--brand-on-surface); }
+        h3 { font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--brand-on-surface); }
+        p, ul { color: var(--brand-muted); line-height: 1.6; margin-bottom: 1rem; }
+        ul { list-style-type: disc; padding-left: 1.5rem; }
+    </style>
+</head>
+<body class="antialiased dark"> <!-- Default to Dark mode -->
+    
+    <div class="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <div class="mb-12 border-b border-brand-divider pb-8">
+            <a href="index.html" class="inline-flex items-center gap-2 text-brand-primary hover:text-brand-onSurface transition mb-6">
+                ← Back to Home
+            </a>
+            <h1 class="text-4xl font-extrabold tracking-tight text-brand-onSurface">Terms of Service</h1>
+            <p class="mt-4 text-brand-muted">Last Updated: January 5, 2026</p>
+        </div>
+
+        <div class="prose prose-lg prose-invert max-w-none">
+            <p>By using Syft AI ("Service"), you agree to the following terms and conditions.</p>
+
+            <h2>1. Description of Service</h2>
+            <p>Syft AI is a recruitment tool that uses Artificial Intelligence to analyze, filter, and rank job applications based on criteria set by the user (Recruiter). We provide the platform for you to collect structured data from candidates and automate the initial screening process.</p>
+
+            <h2>2. AI Disclaimer</h2>
+            <p><strong>Syft AI is a decision-support tool, not a decision-maker.</strong></p>
+            <ul>
+                <li>The AI scoring (1-10) is a suggestion based on semantic analysis. It may occasionally misinterpret nuances or context.</li>
+                <li>You acknowledge that you are responsible for the final hiring decision. We recommend reviewing the top candidates manually before making an offer.</li>
+                <li>Syft AI is not liable for any hiring decisions made based on our scores.</li>
+            </ul>
+
+            <h2>3. Account & Subscription</h2>
+            <h3>Free Tier</h3>
+            <p>The Free Tier allows you to test the service with limitations (e.g., maximum 40 candidates per job, 1 active job). We reserve the right to modify these limits at any time.</p>
+            <h3>Paid Subscriptions</h3>
+            <p>Paid plans (Standard and Agency Pro) are billed monthly. You can cancel your subscription at any time; however, we do not offer refunds for partial months.</p>
+
+            <h2>4. Acceptable Use</h2>
+            <p>You agree not to use the Service to:</p>
+            <ul>
+                <li>Post fake jobs or scam listings.</li>
+                <li>Collect sensitive personal data (e.g., health data, financial data) unnecessarily.</li>
+                <li>Discriminate against candidates in violation of local labor laws.</li>
+            </ul>
+
+            <h2>5. Limitation of Liability</h2>
+            <p>To the maximum extent permitted by law, Syft AI shall not be liable for any indirect, incidental, or consequential damages resulting from your use of the service, including but not limited to loss of data, loss of hires, or service interruptions.</p>
+
+            <h2>6. Termination</h2>
+            <p>We reserve the right to suspend or terminate your account if you violate these terms, particularly regarding fake job postings or spamming candidates via our email tools.</p>
+
+            <h2>7. Governing Law</h2>
+            <p>These terms shall be governed by the laws of the Federal Republic of Nigeria.</p>
+        </div>
+        
+        <div class="mt-16 pt-8 border-t border-brand-divider text-center text-sm text-brand-muted">
+            &copy; 2026 Syft AI. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        // Simple Theme Check to match Index
+        if (localStorage.getItem('themeState') === 'light') {
+            document.body.classList.remove('dark');
+        }
+    </script>
+</body>
+</html>

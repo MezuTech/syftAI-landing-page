@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Syft AI is the intelligent recruitment platform that ranks candidates by skill, not keywords. AI-powered candidate scoring, automated CV analysis, and smart filtering for modern hiring teams.">
+    <meta name="keywords" content="recruitment, AI hiring, candidate screening, applicant tracking system, ATS, skills assessment, hiring automation, Syft AI, CV analysis, candidate ranking">
+    <link rel="canonical" href="https://syftup.com">
+    <link rel="icon" type="image/png" href="Images/siftAiFavicon.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://syftup.com/">
+    <meta property="og:title" content="Syft AI - AI-Powered Recruitment That Actually Works">
+    <meta property="og:description" content="Hire the top 1% and ignore the noise. Syft AI reads every CV, scores every candidate, and ranks them by actual skill—not keyword matching.">
+    <meta property="og:image" content="https://syftup.com/Images/SiftSplash.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://syftup.com/">
+    <meta property="twitter:title" content="Syft AI - AI-Powered Recruitment That Actually Works">
+    <meta property="twitter:description" content="Hire the top 1% and ignore the noise. Syft AI reads every CV, scores every candidate, and ranks them by actual skill—not keyword matching.">
+    <meta property="twitter:image" content="https://syftup.com/Images/SiftSplash.png">
+
+    <title>Syft AI - AI-Powered Recruitment Platform | Hire Smarter, Not Harder</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            surface: 'var(--brand-surface)',
+                            card: 'var(--brand-card)',
+                            fill: 'var(--brand-fill)',
+                            onSurface: 'var(--brand-on-surface)',
+                            muted: 'var(--brand-muted)',
+                            divider: 'var(--brand-divider)',
+                            primary: 'var(--brand-primary)',
+                            secondary: 'var(--brand-secondary)',
+                            accent: 'var(--brand-accent)',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(99, 102, 241, 0.15)',
+                        'glow-hover': '0 0 30px rgba(99, 102, 241, 0.3)',
+                        'glow-primary': '0 10px 40px -10px rgba(79, 70, 229, 0.4)',
+                        'glow-secondary': '0 10px 40px -10px rgba(124, 58, 237, 0.4)',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out forwards',
+                        'slide-in-right': 'slideInRight 0.8s ease-out forwards',
+                        'blob': 'blob 7s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'gradient': 'gradient 8s ease infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-1000px 0' },
+                            '100%': { backgroundPosition: '1000px 0' },
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* CSS Variables for Theming */
+        :root {
+            /* Light Mode Colors */
+            --brand-surface: #ffffff;
+            --brand-card: #f9fafb;
+            --brand-fill: #ffffff;
+            --brand-on-surface: #0f172a;
+            --brand-muted: #64748b;
+            --brand-divider: #e2e8f0;
+            --brand-primary: #4f46e5;
+            --brand-secondary: #7c3aed;
+            --brand-accent: #06b6d4;
+        }
+
+        .dark {
+            /* Dark Theme Colors */
+            --brand-surface: #0B0C15;
+            --brand-card: #131420;
+            --brand-fill: #1c1d2e;
+            --brand-on-surface: #f8fafc;
+            --brand-muted: #94a3b8;
+            --brand-divider: #1e293b;
+            --brand-primary: #818cf8;
+            --brand-secondary: #a78bfa;
+            --brand-accent: #22d3ee;
+        }
+
+        body { 
+            background-color: var(--brand-surface); 
+            color: var(--brand-on-surface); 
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--brand-surface);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--brand-divider);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--brand-muted);
+        }
+        
+        /* Animated Grid Background */
+        .bg-grid {
+            mask-image: linear-gradient(to bottom, transparent, black 5%, black 95%, transparent);
+            background-size: 50px 50px;
+            background-image: linear-gradient(to right, rgba(99, 102, 241, 0.07) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(99, 102, 241, 0.07) 1px, transparent 1px);
+            animation: grid-move 20s linear infinite;
+        }
+        
+        @keyframes grid-move {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary), var(--brand-accent));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 8s ease infinite;
+        }
+        
+        /* Glass Navigation */
+        .glass-nav {
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid var(--brand-divider);
+            transition: all 0.3s ease;
+        }
+        
+        html.dark .glass-nav {
+             background: rgba(11, 12, 21, 0.85);
+        }
+        
+        html:not(.dark) .glass-nav {
+             background: rgba(255, 255, 255, 0.85);
+        }
+        
+        .glass-nav.scrolled {
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Scroll Reveal Animations */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Parallax Effect */
+        .parallax {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        /* Shimmer Effect for Cards */
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .shimmer-card:hover::before {
+            left: 100%;
+        }
+        
+        /* Animated Border */
+        .animated-border {
+            position: relative;
+            border: 2px solid transparent;
+            background: linear-gradient(var(--brand-surface), var(--brand-surface)) padding-box,
+                        linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)) border-box;
+        }
+        
+        /* Pulse Ring Animation */
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.4);
+                opacity: 0;
+            }
+        }
+        
+        .pulse-ring {
+            animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+        }
+        
+        /* Feature Card Hover Effect */
+        .feature-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+        
+        /* Stat Counter Animation */
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stat-number {
+            animation: countUp 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-primary selection:text-white">
+
+    <!-- NAVIGATION -->
+    <nav id="navbar" class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="relative">
+                        <img src="Images/SiftLogo.png" alt="Syft AI Logo" class="w-10 h-10 rounded-xl object-cover shadow-lg shadow-brand-primary/20 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                        <div class="absolute inset-0 rounded-xl bg-brand-primary/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight text-brand-onSurface">Syft<span class="gradient-text">AI</span></span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-sm font-medium text-brand-muted hover:text-brand-onSurface transition-colors duration-200 relative group">
+                        Features
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#how-it-works" class="text-sm font-medium text-brand-muted hover:text-brand-onSurface transition-colors duration-200 relative group">
+                        How It Works
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#pricing" class="text-sm font-medium text-brand-muted hover:text-brand-onSurface transition-colors duration-200 relative group">
+                        Pricing
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#testimonials" class="text-sm font-medium text-brand-muted hover:text-brand-onSurface transition-colors duration-200 relative group">
+                        Reviews
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    
+                    <div class="h-6 w-px bg-brand-divider"></div>
+                    
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-lg text-brand-muted hover:text-brand-onSurface hover:bg-brand-divider/50 transition-all duration-200 relative group" title="Toggle Theme">
+                        <i data-lucide="sun" id="icon-light" class="w-5 h-5 hidden"></i>
+                        <i data-lucide="moon" id="icon-dark" class="w-5 h-5 hidden"></i>
+                        <i data-lucide="monitor" id="icon-system" class="w-5 h-5 hidden"></i>
+                        <span class="absolute inset-0 rounded-lg bg-brand-primary/10 scale-0 group-hover:scale-100 transition-transform duration-300 -z-10"></span>
+                    </button>
+
+                    <a href="https://app.syftup.com" class="bg-gradient-to-r from-brand-primary to-brand-secondary hover:opacity-90 text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 shadow-glow-primary hover:shadow-glow-hover transform hover:-translate-y-0.5 hover:scale-105">
+                        Get Started Free
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-4">
+                    <button id="theme-toggle-mobile" class="p-2 text-brand-muted">
+                        <i data-lucide="sun" class="w-5 h-5 icon-light hidden"></i>
+                        <i data-lucide="moon" class="w-5 h-5 icon-dark hidden"></i>
+                        <i data-lucide="monitor" class="w-5 h-5 icon-system hidden"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="text-brand-muted hover:text-brand-onSurface p-2 transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-brand-divider bg-brand-surface/95 backdrop-blur-lg">
+            <div class="px-4 py-6 space-y-4">
+                <a href="#features" class="block text-base font-medium text-brand-muted hover:text-brand-onSurface transition-colors">Features</a>
+                <a href="#how-it-works" class="block text-base font-medium text-brand-muted hover:text-brand-onSurface transition-colors">How It Works</a>
+                <a href="#pricing" class="block text-base font-medium text-brand-muted hover:text-brand-onSurface transition-colors">Pricing</a>
+                <a href="#testimonials" class="block text-base font-medium text-brand-muted hover:text-brand-onSurface transition-colors">Reviews</a>
+                <a href="https://app.syftup.com" class="block w-full text-center bg-brand-primary text-white px-6 py-3 rounded-lg text-sm font-semibold">Get Started Free</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-grid">
+        <!-- Ambient Background Glows -->
+        <div class="absolute top-0 left-1/2 w-full -translate-x-1/2 h-full z-0 pointer-events-none">
+            <div class="absolute top-[10%] left-[20%] w-[600px] h-[600px] bg-brand-primary/20 rounded-full blur-[120px] mix-blend-screen animate-blob"></div>
+            <div class="absolute top-[20%] right-[20%] w-[500px] h-[500px] bg-brand-secondary/20 rounded-full blur-[120px] mix-blend-screen animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-[10%] left-[30%] w-[600px] h-[600px] bg-brand-accent/10 rounded-full blur-[120px] mix-blend-screen animate-blob animation-delay-4000"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-card border border-brand-divider text-xs font-semibold text-brand-primary mb-8 reveal-on-scroll">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
+                </span>
+                New: Bulk Actions V2.0 Live
+            </div>
+
+            <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight text-brand-onSurface mb-6 leading-tight reveal-on-scroll" style="transition-delay: 100ms;">
+                Hire the top 1% <br>
+                <span class="gradient-text">Cut the noise.</span>
+            </h1>
+            
+            <p class="mt-6 text-xl text-brand-muted max-w-2xl mx-auto leading-relaxed reveal-on-scroll" style="transition-delay: 200ms;">
+                The only recruitment platform that ranks candidates by actual skill, not keywords. 
+                <br class="hidden sm:block">Automate the sift, focus on the interview.
+            </p>
+            
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4 reveal-on-scroll" style="transition-delay: 300ms;">
+                <a href="#pricing" class="px-8 py-4 bg-brand-primary text-white text-lg font-bold rounded-xl hover:opacity-90 transition shadow-lg shadow-brand-primary/25 flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                    Start Hiring Free <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <a href="#demo" class="px-8 py-4 bg-brand-card border border-brand-divider text-lg font-medium text-brand-onSurface rounded-xl hover:bg-brand-fill transition flex items-center justify-center gap-2">
+                    <i data-lucide="play-circle" class="w-5 h-5 text-brand-muted"></i> Live Demo
+                </a>
+            </div>
+            
+            <!-- HERO DASHBOARD PREVIEW -->
+            <div class="mt-16 relative max-w-5xl mx-auto reveal-on-scroll" style="transition-delay: 400ms;">
+                <div class="relative bg-brand-card/50 backdrop-blur-xl border border-brand-divider rounded-2xl p-2 shadow-2xl ring-1 ring-white/10">
+                    <!-- Browser Chrome -->
+                    <div class="bg-brand-card border-b border-brand-divider rounded-t-xl px-4 py-2 flex items-center gap-2">
+                        <div class="flex gap-1.5">
+                            <div class="w-3 h-3 rounded-full bg-red-400/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-400/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-400/80"></div>
+                        </div>
+                        <div class="mx-auto w-1/3 h-5 bg-brand-divider/20 rounded-md text-[10px] text-center flex items-center justify-center text-brand-muted font-mono">
+                            app.syft.ai/dashboard/active-jobs
+                        </div>
+                    </div>
+                    
+                    <!-- App Content -->
+                    <div class="bg-brand-surface rounded-b-xl overflow-hidden min-h-[300px] md:min-h-[400px] relative p-6">
+                         <!-- Sidebar placeholder -->
+                         <div class="absolute left-0 top-0 bottom-0 w-16 border-r border-brand-divider flex flex-col items-center py-6 gap-6 z-10 bg-brand-surface hidden md:flex">
+                             <div class="w-8 h-8 bg-brand-primary/20 rounded-lg"></div>
+                             <div class="w-5 h-5 bg-brand-divider rounded"></div>
+                             <div class="w-5 h-5 bg-brand-divider rounded"></div>
+                             <div class="w-5 h-5 bg-brand-divider rounded"></div>
+                         </div>
+                         
+                         <!-- Main area -->
+                         <div class="md:ml-20">
+                             <div class="flex justify-between items-end mb-8">
+                                 <div>
+                                     <div class="text-xs font-bold text-brand-primary uppercase tracking-wider mb-1">Senior Product Designer</div>
+                                     <div class="text-2xl font-bold text-brand-onSurface">Candidates (452)</div>
+                                 </div>
+                                 <button class="bg-brand-onSurface text-brand-surface px-4 py-2 rounded-lg text-sm font-medium">Auto-Filter Spam</button>
+                             </div>
+
+                             <!-- List Header -->
+                             <div class="grid grid-cols-12 gap-4 text-xs font-medium text-brand-muted mb-4 px-2">
+                                 <div class="col-span-4">CANDIDATE</div>
+                                 <div class="col-span-3">MATCH SCORE</div>
+                                 <div class="col-span-3">STATUS</div>
+                                 <div class="col-span-2">ACTION</div>
+                             </div>
+
+                             <!-- Items -->
+                             <div class="space-y-3">
+                                 <!-- Item 1 -->
+                                 <div class="grid grid-cols-12 gap-4 items-center p-3 rounded-lg bg-brand-card border border-brand-divider hover:border-brand-primary transition-colors cursor-pointer group">
+                                     <div class="col-span-4 flex items-center gap-3">
+                                         <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-brand-primary to-brand-accent"></div>
+                                         <div>
+                                             <div class="text-sm font-bold text-brand-onSurface">Elena R.</div>
+                                             <div class="text-[10px] text-brand-muted">Applied 2m ago</div>
+                                         </div>
+                                     </div>
+                                     <div class="col-span-3">
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-green-600 font-bold text-sm">98%</span>
+                                            <div class="w-16 h-1.5 bg-brand-divider rounded-full overflow-hidden">
+                                                <div class="h-full bg-green-500 w-[98%]"></div>
+                                            </div>
+                                        </div>
+                                     </div>
+                                     <div class="col-span-3">
+                                         <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-green-500/10 text-green-600 border border-green-500/20">Top 1% Match</span>
+                                     </div>
+                                      <div class="col-span-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                          <button class="text-xs bg-brand-primary text-white px-2 py-1 rounded">View</button>
+                                      </div>
+                                 </div>
+
+                                  <!-- Item 2 -->
+                                 <div class="grid grid-cols-12 gap-4 items-center p-3 rounded-lg bg-brand-card border border-brand-divider hover:border-brand-primary transition-colors cursor-pointer group">
+                                     <div class="col-span-4 flex items-center gap-3">
+                                         <div class="w-8 h-8 rounded-full bg-gray-200"></div>
+                                         <div>
+                                             <div class="text-sm font-bold text-brand-onSurface">Marcus C.</div>
+                                             <div class="text-[10px] text-brand-muted">Applied 12m ago</div>
+                                         </div>
+                                     </div>
+                                     <div class="col-span-3">
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-brand-primary font-bold text-sm">84%</span>
+                                            <div class="w-16 h-1.5 bg-brand-divider rounded-full overflow-hidden">
+                                                <div class="h-full bg-brand-primary w-[84%]"></div>
+                                            </div>
+                                        </div>
+                                     </div>
+                                     <div class="col-span-3">
+                                         <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-brand-muted/10 text-brand-muted border border-brand-muted/20">Pending</span>
+                                     </div>
+                                      <div class="col-span-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                          <button class="text-xs bg-brand-card border border-brand-divider text-brand-onSurface px-2 py-1 rounded">View</button>
+                                      </div>
+                                 </div>
+                             </div>
+                         </div>
+                    </div>
+                    <!-- Floating Badge -->
+                     <div class="absolute -bottom-6 -right-6 bg-brand-surface border border-brand-divider p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce hidden lg:flex" style="animation-duration: 3s;">
+                        <div class="w-10 h-10 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center">
+                            <i data-lucide="check" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs text-brand-muted font-bold">SAVED TIME</div>
+                            <div class="text-sm font-bold text-brand-onSurface">+12 Hours</div>
+                        </div>    
+                     </div>
+                </div>
+            </div>
+            
+            <div class="mt-24 pt-8 border-t border-brand-divider/30 max-w-3xl mx-auto">
+                <p class="text-sm text-brand-muted mb-4 font-medium uppercase tracking-widest">Trusted by innovative teams worldwide</p>
+                <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500">
+                    <!-- Generic Global Tech Logos -->
+                    <div class="flex items-center gap-2 text-brand-onSurface">
+                        <i data-lucide="hexagon" class="w-6 h-6"></i>
+                        <span class="text-xl font-bold font-sans">TechFlow</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-brand-onSurface">
+                        <i data-lucide="zap" class="w-6 h-6"></i>
+                        <span class="text-xl font-bold font-sans">Streamline</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-brand-onSurface">
+                        <i data-lucide="globe" class="w-6 h-6"></i>
+                        <span class="text-xl font-bold font-sans">GlobalPay</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-brand-onSurface">
+                        <i data-lucide="layers" class="w-6 h-6"></i>
+                        <span class="text-xl font-bold font-sans">Stack</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CORE FEATURES (Bento Grid) -->
+    <div id="how-it-works" class="py-24 bg-brand-surface relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal-on-scroll">
+                <h2 class="text-xl font-bold text-brand-primary tracking-widest uppercase mb-2">Built for Scale</h2>
+                <p class="text-3xl sm:text-5xl font-extrabold text-brand-onSurface leading-tight">
+                    Recruitment operations <br>
+                    <span class="text-brand-muted">without the overhead.</span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-6 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+                
+                <!-- Card 1: Main Feature (Large) -->
+                <div class="md:col-span-4 md:row-span-2 bg-brand-card rounded-3xl border border-brand-divider p-8 flex flex-col justify-between group hover:border-brand-primary/50 transition-all duration-300 relative overflow-hidden reveal-on-scroll">
+                    <div class="absolute right-0 top-0 w-64 h-64 bg-brand-primary/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-brand-surface rounded-xl border border-brand-divider flex items-center justify-center mb-6 shadow-sm">
+                            <i data-lucide="cpu" class="w-6 h-6 text-brand-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-onSurface mb-3">Ranking, not reading.</h3>
+                        <p class="text-brand-muted text-lg max-w-md">Our AI analyzes thousands of responses instantly. It understands code, logic, and soft skills, transforming a flood of applicants into a neat, scored leaderboard.</p>
+                    </div>
+
+                    <!-- Abstract Visualization -->
+                    <div class="mt-8 bg-brand-surface border border-brand-divider rounded-xl p-4 shadow-sm w-full md:w-[90%] self-end transform transition-transform group-hover:-translate-y-2">
+                        <div class="flex items-center gap-4 border-b border-brand-divider/50 pb-3 mb-3">
+                            <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                            <div class="text-xs font-mono text-brand-muted">AI PROCESSING STREAM</div>
+                        </div>
+                        <div class="space-y-2">
+                             <div class="h-2 w-3/4 bg-brand-divider/50 rounded-full"></div>
+                             <div class="h-2 w-1/2 bg-brand-divider/50 rounded-full"></div>
+                             <div class="h-2 w-full bg-brand-divider/30 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Speed (Small) -->
+                <div class="md:col-span-2 md:row-span-1 bg-brand-surface rounded-3xl border border-brand-divider p-8 flex flex-col justify-center relative overflow-hidden hover:border-brand-secondary/50 transition-all duration-300 reveal-on-scroll" style="transition-delay: 100ms;">
+                     <div class="absolute right-0 bottom-0 w-32 h-32 bg-brand-secondary/10 rounded-full blur-[40px]"></div>
+                     <div class="flex items-center justify-between mb-4">
+                        <div class="text-4xl font-extrabold text-brand-onSurface">20h+</div>
+                        <i data-lucide="clock" class="w-6 h-6 text-brand-secondary"></i>
+                     </div>
+                     <p class="text-brand-muted font-medium">Saved per hire on average.</p>
+                     <p class="text-xs text-brand-muted mt-2 opacity-60">Based on 10,000+ filtered candidates.</p>
+                </div>
+
+                <!-- Card 3: Quality (Small) -->
+                <div class="md:col-span-2 md:row-span-1 bg-brand-onSurface text-brand-surface rounded-3xl border border-brand-onSurface p-8 flex flex-col justify-between hover:shadow-glow transition-all duration-300 reveal-on-scroll" style="transition-delay: 200ms;">
+                    <div>
+                        <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-1">Bias-Free</h3>
+                        <p class="text-white/60 text-sm">Skills over schools. Impact over universities.</p>
+                    </div>
+                    <div class="flex -space-x-2 mt-4">
+                        <div class="w-8 h-8 rounded-full border-2 border-brand-onSurface bg-gray-600"></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-brand-onSurface bg-gray-500"></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-brand-onSurface bg-gray-400"></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-brand-onSurface bg-brand-primary flex items-center justify-center text-[10px] font-bold">+4k</div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Integrations Strip (Postly style) -->
+            <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 reveal-on-scroll">
+                <div class="bg-brand-card p-4 rounded-xl border border-brand-divider flex items-center justify-center gap-3 opacity-60 hover:opacity-100 transition">
+                    <i data-lucide="slack" class="w-5 h-5"></i> <span class="font-semibold text-sm">Slack</span>
+                </div>
+                <div class="bg-brand-card p-4 rounded-xl border border-brand-divider flex items-center justify-center gap-3 opacity-60 hover:opacity-100 transition">
+                    <i data-lucide="mail" class="w-5 h-5"></i> <span class="font-semibold text-sm">Gmail</span>
+                </div>
+                <div class="bg-brand-card p-4 rounded-xl border border-brand-divider flex items-center justify-center gap-3 opacity-60 hover:opacity-100 transition">
+                    <i data-lucide="file-text" class="w-5 h-5"></i> <span class="font-semibold text-sm">Greenhouse</span>
+                </div>
+                <div class="bg-brand-card p-4 rounded-xl border border-brand-divider flex items-center justify-center gap-3 opacity-60 hover:opacity-100 transition">
+                    <i data-lucide="calendar" class="w-5 h-5"></i> <span class="font-semibold text-sm">Cal.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AUTOMATION HIGHLIGHT -->
+    <div class="py-24 bg-brand-card border-y border-brand-divider relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                 <div class="order-2 md:order-1 relative reveal-on-scroll">
+                    <!-- Email Card Mockup -->
+                    <div class="bg-brand-surface rounded-2xl border border-brand-divider shadow-2xl p-8 relative z-10 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <div class="flex items-center gap-4 mb-6 border-b border-brand-divider pb-4">
+                            <div class="w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center">
+                                <i data-lucide="check" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold text-brand-onSurface">Interview Invitation</div>
+                                <div class="text-xs text-brand-muted">To: Top 5 Candidates</div>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="h-2 w-1/3 bg-brand-divider/50 rounded-full"></div>
+                            <div class="h-2 w-full bg-brand-divider/30 rounded-full"></div>
+                            <div class="h-2 w-full bg-brand-divider/30 rounded-full"></div>
+                            <div class="h-2 w-3/4 bg-brand-divider/30 rounded-full"></div>
+                        </div>
+                        <div class="mt-6 flex justify-end">
+                             <button class="bg-brand-onSurface text-brand-surface text-xs font-bold px-4 py-2 rounded-lg">Sent Automatically</button>
+                        </div>
+                    </div>
+                     <!-- Background decoration -->
+                    <div class="absolute inset-0 bg-brand-primary/20 blur-[60px] -z-10"></div>
+                 </div>
+
+                 <div class="order-1 md:order-2 reveal-on-scroll">
+                    <h2 class="text-3xl font-bold text-brand-onSurface mb-6">Ghosting is so 2024.</h2>
+                    <p class="text-lg text-brand-muted mb-8">Candidates hate waiting. You hate writing rejection emails. Syft AI handles the communication loop for you.</p>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-brand-fill border border-brand-divider flex items-center justify-center">
+                                1
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-brand-onSurface">Instant Acknowledgement</h3>
+                                <p class="text-brand-muted text-sm mt-1">Every applicant gets a confirmation instantly.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-brand-fill border border-brand-divider flex items-center justify-center">
+                                2
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-brand-onSurface">Bulk Rejections (with kindness)</h3>
+                                <p class="text-brand-muted text-sm mt-1">Reject the bottom 50% in one click with a polite, personalized email.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-brand-fill border border-brand-divider flex items-center justify-center">
+                                3
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-brand-onSurface">Interview Scheduling</h3>
+                                <p class="text-brand-muted text-sm mt-1">Top candidates get your calendar link automatically.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMPARISON SECTION -->
+    <div id="comparison" class="py-24 bg-brand-surface">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal-on-scroll">
+                <h2 class="text-3xl font-extrabold text-brand-onSurface sm:text-4xl">Stop reading. Start hiring.</h2>
+                <p class="text-brand-muted mt-4">The average recruiter spends 13 seconds on a CV. Syft spends infinite time on every answer.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                <!-- Old Way -->
+                <div class="bg-brand-surface border border-brand-divider p-10 rounded-3xl opacity-60 hover:opacity-100 transition duration-300 reveal-on-scroll">
+                    <h3 class="text-brand-muted font-bold text-xl mb-8 flex items-center gap-3">
+                        <i data-lucide="file-text" class="w-6 h-6"></i> CV Screening
+                    </h3>
+                    <ul class="space-y-6 text-brand-muted font-medium">
+                        <li class="flex gap-4 items-center"><span class="w-6 h-6 rounded-full bg-red-100 text-red-500 flex items-center justify-center text-xs">✕</span> 500+ PDF attachments to open</li>
+                        <li class="flex gap-4 items-center"><span class="w-6 h-6 rounded-full bg-red-100 text-red-500 flex items-center justify-center text-xs">✕</span> Bias based on university/name</li>
+                        <li class="flex gap-4 items-center"><span class="w-6 h-6 rounded-full bg-red-100 text-red-500 flex items-center justify-center text-xs">✕</span> 60% spam applications</li>
+                        <li class="flex gap-4 items-center"><span class="w-6 h-6 rounded-full bg-red-100 text-red-500 flex items-center justify-center text-xs">✕</span> Weeks of manual labor</li>
+                    </ul>
+                </div>
+
+                <!-- Syft Way -->
+                <div class="bg-brand-onSurface text-brand-surface p-10 rounded-3xl relative overflow-hidden shadow-2xl transform hover:-translate-y-2 transition duration-300 reveal-on-scroll" style="transition-delay: 100ms;">
+                    
+                    <h3 class="font-bold text-xl mb-8 flex items-center gap-3 text-white">
+                        <i data-lucide="sparkles" class="w-6 h-6 text-brand-accent"></i> Syft AI Ranking
+                    </h3>
+                    <ul class="space-y-6">
+                        <li class="flex gap-4 items-center"><i data-lucide="check" class="w-6 h-6 text-brand-accent"></i> <span>Automated Leaderboard</span></li>
+                        <li class="flex gap-4 items-center"><i data-lucide="check" class="w-6 h-6 text-brand-accent"></i> <span>100% Skill-Based</span></li>
+                        <li class="flex gap-4 items-center"><i data-lucide="check" class="w-6 h-6 text-brand-accent"></i> <span>Spam Filtered Instantly</span></li>
+                        <li class="flex gap-4 items-center"><i data-lucide="check" class="w-6 h-6 text-brand-accent"></i> <span>Shortlist in Minutes</span></li>
+                    </ul>
+
+                    <!-- Decorative Shine -->
+                    <div class="absolute -top-24 -right-24 w-48 h-48 bg-white/10 rounded-full blur-[50px]"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TESTIMONIALS (Masonry/Grid) -->
+    <div class="py-24 bg-brand-surface border-y border-brand-divider relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-center text-3xl font-bold text-brand-onSurface mb-4 reveal-on-scroll">Trusted by modern hiring teams</h2>
+            <div class="flex justify-center gap-1 mb-16 reveal-on-scroll">
+                 <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                 <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                 <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                 <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                 <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                 <span class="ml-2 text-brand-muted font-medium">5.0 on G2 Crowd</span>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-divider hover:-translate-y-1 hover:shadow-lg transition-all duration-300 reveal-on-scroll">
+                    <p class="text-brand-onSurface text-lg font-medium mb-6">"We simply couldn't handle the volume of applicants for our remote roles. Syft turned a 3-day nightmare into a 2-hour task."</p>
+                    <div class="flex items-center gap-3 border-t border-brand-divider pt-4">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" class="w-10 h-10 rounded-full bg-brand-fill" alt="Sarah">
+                        <div>
+                            <div class="text-brand-onSurface text-sm font-bold">Sarah Jenkins</div>
+                            <div class="text-brand-muted text-xs">Head of People, TechFlow</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-divider hover:-translate-y-1 hover:shadow-lg transition-all duration-300 reveal-on-scroll" style="transition-delay: 100ms;">
+                    <p class="text-brand-onSurface text-lg font-medium mb-6">"The candidates actually prefer it. They get to show their code instead of their formatting skills. Our hire quality went up 3x."</p>
+                    <div class="flex items-center gap-3 border-t border-brand-divider pt-4">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=David" class="w-10 h-10 rounded-full bg-brand-fill" alt="David">
+                        <div>
+                            <div class="text-brand-onSurface text-sm font-bold">David Chen</div>
+                            <div class="text-brand-muted text-xs">CTO, StartUp Inc</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-divider hover:-translate-y-1 hover:shadow-lg transition-all duration-300 reveal-on-scroll" style="transition-delay: 200ms;">
+                    <p class="text-brand-onSurface text-lg font-medium mb-6">"I haven't opened a PDF resume in 6 months. It feels like magic. The automated rejection emails are a nice touch too."</p>
+                    <div class="flex items-center gap-3 border-t border-brand-divider pt-4">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Priya" class="w-10 h-10 rounded-full bg-brand-fill" alt="Priya">
+                        <div>
+                            <div class="text-brand-onSurface text-sm font-bold">Priya Patel</div>
+                            <div class="text-brand-muted text-xs">Recruiter, AgencyGlobal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRICING SECTION -->
+    <div id="pricing" class="py-24 relative overflow-hidden">
+        <!-- Background Bloom -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal-on-scroll">
+                <h2 class="text-xl font-bold text-brand-primary uppercase tracking-wider mb-2">Pricing</h2>
+                <h2 class="text-3xl font-extrabold text-brand-onSurface sm:text-5xl">Start free. Scale when ready.</h2>
+                <p class="mt-4 text-xl text-brand-muted">Simple usage-based pricing. No contracts.</p>
+            </div>
+
+            <!-- Pricing Grid -->
+            <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
+                
+                <!-- FREE TIER -->
+                <div class="bg-brand-surface rounded-3xl p-8 border border-brand-divider flex flex-col h-full shadow-sm hover:shadow-xl transition-all duration-300 reveal-on-scroll">
+                    <h3 class="text-lg font-bold text-brand-muted uppercase tracking-wide">Starter</h3>
+                    <div class="mt-4 flex items-baseline gap-1">
+                        <span class="text-4xl font-extrabold text-brand-onSurface">$0</span>
+                        <span class="text-brand-muted">/ forever</span>
+                    </div>
+                    <p class="mt-4 text-sm text-brand-muted pb-6 border-b border-brand-divider">Perfect for your first hire.</p>
+                    
+                    <ul class="mt-6 space-y-4 flex-1 text-brand-muted">
+                        <li class="flex items-center text-sm">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-onSurface mr-3"></i> 1 Active Job Post
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-onSurface mr-3"></i> <strong>40 Candidates</strong>
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-onSurface mr-3"></i> Basic AI Scoring
+                        </li>
+                    </ul>
+
+                    <a href="#" class="mt-8 w-full py-3 px-6 rounded-xl border border-brand-divider bg-brand-surface text-brand-onSurface font-bold hover:bg-brand-card transition text-center">
+                        Start Free
+                    </a>
+                </div>
+
+                <!-- STANDARD TIER (Highlighted) -->
+                <div class="bg-brand-card rounded-3xl p-8 border-2 border-brand-primary relative transform lg:-translate-y-6 shadow-2xl flex flex-col h-full reveal-on-scroll" style="transition-delay: 100ms;">
+                    
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-brand-primary to-brand-secondary text-xs font-bold text-white uppercase rounded-full tracking-wide shadow-lg">
+                        Most Popular
+                    </div>
+                    
+                    <h3 class="text-lg font-bold text-brand-primary uppercase tracking-wide">Growth</h3>
+                    <div class="mt-4 flex items-baseline gap-1">
+                        <span class="text-5xl font-extrabold text-brand-onSurface">$29</span>
+                        <span class="text-lg text-brand-muted">/ mo</span>
+                    </div>
+                    <p class="mt-2 text-sm text-brand-muted pb-6 border-b border-brand-divider">For teams hiring regularly.</p>
+                    
+                    <ul class="mt-6 space-y-4 flex-1">
+                        <li class="flex items-center text-sm text-brand-onSurface font-medium">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-brand-primary mr-3"></i> 3 Active Job Posts
+                        </li>
+                        <li class="flex items-center text-sm text-brand-onSurface font-medium">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-brand-primary mr-3"></i> <strong>250 Candidates</strong> / job
+                        </li>
+                        <li class="flex items-center text-sm text-brand-onSurface">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-brand-primary mr-3"></i> Email Automation
+                        </li>
+                        <li class="flex items-center text-sm text-brand-onSurface">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-brand-primary mr-3"></i> AI Feedback Report
+                        </li>
+                    </ul>
+
+                    <a href="#" class="mt-8 w-full py-4 px-6 rounded-xl bg-brand-primary text-white font-bold hover:opacity-90 transition shadow-glow hover:shadow-glow-hover text-center">
+                        Start Growing
+                    </a>
+                </div>
+
+                <!-- AGENCY TIER -->
+                <div class="bg-brand-surface rounded-3xl p-8 border border-brand-divider flex flex-col h-full shadow-sm hover:shadow-xl transition-all duration-300 reveal-on-scroll" style="transition-delay: 200ms;">
+                    <h3 class="text-lg font-bold text-brand-onSurface uppercase tracking-wide">Agency</h3>
+                    <div class="mt-4 flex items-baseline gap-1">
+                        <span class="text-4xl font-extrabold text-brand-onSurface">$99</span>
+                        <span class="text-brand-muted">/ mo</span>
+                    </div>
+                    <p class="mt-4 text-sm text-brand-muted pb-6 border-b border-brand-divider">For high volume recruiting.</p>
+                    
+                    <ul class="mt-6 space-y-4 flex-1 text-brand-muted">
+                        <li class="flex items-center text-sm text-brand-onSurface">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-secondary mr-3"></i> Unlimited Jobs
+                        </li>
+                        <li class="flex items-center text-sm text-brand-onSurface">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-secondary mr-3"></i> <strong>Unlimited</strong> Candidates
+                        </li>
+                        <li class="flex items-center text-sm text-brand-onSurface">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-secondary mr-3"></i> API Access
+                        </li>
+                        <li class="flex items-center text-sm text-brand-onSurface">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-secondary mr-3"></i> White Labeling
+                        </li>
+                    </ul>
+
+                    <a href="#" class="mt-8 w-full py-3 px-6 rounded-xl border border-brand-divider bg-brand-surface text-brand-onSurface font-bold hover:bg-brand-card transition text-center">
+                        Contact Sales
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ SECTION -->
+    <div id="faq" class="py-24 bg-brand-surface border-t border-brand-divider">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-center text-3xl font-bold text-brand-onSurface mb-16">Frequently Asked Questions</h2>
+            
+            <div class="space-y-6">
+                <!-- Question 1 -->
+                <div class="bg-brand-card rounded-xl border border-brand-divider overflow-hidden group">
+                    <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="text-lg font-medium text-brand-onSurface">Is it really free?</span>
+                        <i data-lucide="chevron-down" class="text-brand-muted group-hover:text-brand-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-6 text-brand-muted hidden">
+                        Yes! You can post 1 job and grade up to 40 candidates for free. You only pay if you need to hire for multiple roles or want premium features like bulk emailing.
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="bg-brand-card rounded-xl border border-brand-divider overflow-hidden group">
+                    <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="text-lg font-medium text-brand-onSurface">Does the AI reject people automatically?</span>
+                        <i data-lucide="chevron-down" class="text-brand-muted group-hover:text-brand-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-6 text-brand-muted hidden">
+                        No. The AI gives every candidate a score (1-10), but you make the final decision. You can choose to auto-reject low scores if you want, but it's always under your control.
+                    </div>
+                </div>
+
+                 <!-- Question 3 -->
+                 <div class="bg-brand-card rounded-xl border border-brand-divider overflow-hidden group">
+                    <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="text-lg font-medium text-brand-onSurface">Can I upgrade or downgrade anytime?</span>
+                        <i data-lucide="chevron-down" class="text-brand-muted group-hover:text-brand-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-6 text-brand-muted hidden">
+                        Absolutely. You can subscribe for one month to handle a hiring burst and cancel immediately after. No long-term contracts.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-card border-t border-brand-divider pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <img src="SiftLogo.png" alt="Syft AI Logo" class="w-8 h-8 rounded-lg object-cover">
+                    <span class="font-bold text-lg text-brand-onSurface">Syft AI</span>
+                </div>
+                
+                <div class="flex gap-8 text-sm text-brand-muted">
+                    <a href="privacy_policy.html" class="hover:text-brand-onSurface transition">Privacy Policy</a>
+                    <a href="terms_of_service.html" class="hover:text-brand-onSurface transition">Terms of Service</a>
+                    <a href="#" class="hover:text-brand-onSurface transition">Twitter</a>
+                    <a href="#" class="hover:text-brand-onSurface transition">LinkedIn</a>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-xs text-brand-muted opacity-50">
+                &copy; 2026 Syft AI. Built with ❤️ for the world.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+
+        // FAQ Toggle Logic
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Theme Toggle Logic (3-State)
+        const toggleBtnDesktop = document.getElementById('theme-toggle');
+        const toggleBtnMobile = document.getElementById('theme-toggle-mobile');
+        const html = document.documentElement;
+        
+        // State: 'light' | 'dark' | 'system'
+        let currentThemeState = localStorage.getItem('themeState') || 'system';
+
+        // Icons
+        const icons = {
+            light: 'sun',
+            dark: 'moon',
+            system: 'monitor'
+        };
+
+        function applyTheme() {
+            // 1. Remove forced classes first
+            html.classList.remove('dark', 'light');
+
+            // 2. Determine actual visual theme
+            if (currentThemeState === 'system') {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    html.classList.add('dark');
+                } else {
+                    html.classList.remove('dark'); // Default to light
+                }
+            } else if (currentThemeState === 'dark') {
+                html.classList.add('dark');
+            } else {
+                html.classList.remove('dark'); // Light
+            }
+
+            // 3. Update Icons
+            updateIcons(toggleBtnDesktop);
+            updateIcons(toggleBtnMobile);
+            
+            // 4. Save state
+            localStorage.setItem('themeState', currentThemeState);
+        }
+
+        function updateIcons(btn) {
+            if (!btn) return;
+            
+            // Hide all icons
+            btn.querySelectorAll('i').forEach(i => i.classList.add('hidden'));
+            
+            // Show current icon
+            const currentIconId = `icon-${currentThemeState}`;
+            // For desktop, we use IDs, for mobile we use classes as selectors might differ
+            // Simply simpler: Look for the lucide data-lucide attribute logic re-render or class switching
+            
+            // Actually lucide renders SVG, so we toggle visibility of the specific SVGs if they exist
+            // Re-render approach for simplicity with Lucide:
+            
+            // Alternative: The SVGs are already there hidden.
+            // Desktop structure: i#icon-light, i#icon-dark, i#icon-system
+            if (btn.id === 'theme-toggle') {
+                btn.querySelector(`#icon-${currentThemeState}`).classList.remove('hidden');
+            } else {
+                // Mobile structure: i.icon-light, i.icon-dark...
+                btn.querySelector(`.icon-${currentThemeState}`).classList.remove('hidden');
+            }
+        }
+
+        function cycleTheme() {
+            if (currentThemeState === 'light') currentThemeState = 'dark';
+            else if (currentThemeState === 'dark') currentThemeState = 'system';
+            else currentThemeState = 'light';
+            
+            applyTheme();
+        }
+
+        // Listeners
+        if (toggleBtnDesktop) toggleBtnDesktop.addEventListener('click', cycleTheme);
+        if (toggleBtnMobile) toggleBtnMobile.addEventListener('click', cycleTheme);
+
+        // System change listener
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+            if (currentThemeState === 'system') {
+                applyTheme();
+            }
+        });
+
+        // Initialize
+        applyTheme();
+
+        // Scroll Animation Observer
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // optional: unobserve if you only want it to run once
+                    // observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+            observer.observe(el);
+        });
+        
+    </script>
+</body>
+</html>

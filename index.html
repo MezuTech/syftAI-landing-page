@@ -1,0 +1,1036 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SyftAI - The AI-powered recruitment platform that ranks candidates by skill, not keywords. Automate CV analysis, score candidates instantly, and hire the top 1%.">
+    <meta name="keywords" content="AI recruitment, candidate screening, applicant tracking, ATS, CV analysis, hiring automation, SyftAI, talent acquisition">
+    <link rel="canonical" href="https://syftup.com">
+    <link rel="icon" type="image/png" href="Images/siftAiFavicon.png">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://syftup.com/">
+    <meta property="og:title" content="SyftAI - AI-Powered Recruitment Platform">
+    <meta property="og:description" content="Hire the top 1% and cut the noise. AI-powered candidate scoring and ranking.">
+    <meta property="og:image" content="https://syftup.com/Images/SiftSplash.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://syftup.com/">
+    <meta property="twitter:title" content="SyftAI - AI-Powered Recruitment Platform">
+    <meta property="twitter:description" content="Hire the top 1% and cut the noise. AI-powered candidate scoring and ranking.">
+
+    <title>SyftAI - AI-Powered Recruitment Platform | Hire Smarter</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        sift: {
+                            primary: '#6366F1',
+                            secondary: '#8B5CF6',
+                            accent: '#06B6D4',
+                            success: '#10B981',
+                            warning: '#F59E0B',
+                            error: '#EF4444',
+                            info: '#3B82F6',
+                        },
+                        dark: {
+                            bg: '#0F172A',
+                            surface: '#1E293B',
+                            card: '#1F1F3A',
+                            secondary: '#334155',
+                            border: '#475569',
+                            text: '#E2E8F0',
+                            muted: '#94A3B8',
+                        },
+                        light: {
+                            bg: '#F8FAFC',
+                            surface: '#FFFFFF',
+                            border: '#E2E8F0',
+                            text: '#0F172A',
+                            muted: '#64748B',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 2s infinite',
+                        'pulse-soft': 'pulse-soft 3s ease-in-out infinite',
+                        'gradient': 'gradient 8s linear infinite',
+                        'bounce-soft': 'bounceSoft 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'pulse-soft': {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.7' },
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        bounceSoft: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' },
+                        },
+                    },
+                    backgroundImage: {
+                        'hero-pattern': 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%236366f1\' fill-opacity=\'0.03\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #64748B; }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #6366F1, #8B5CF6, #06B6D4);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 8s linear infinite;
+        }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(71, 85, 105, 0.3);
+        }
+
+        html:not(.dark) .glass { 
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(226, 232, 240, 0.8);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+        }
+
+        .feature-icon {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.5));
+        }
+    </style>
+</head>
+
+<body class="bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text font-sans antialiased selection:bg-sift-primary/30 transition-colors duration-300">
+
+    <!-- NAVIGATION -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-sift-primary/30 rounded-xl blur-xl group-hover:bg-sift-primary/50 transition-all duration-300"></div>
+                        <img src="Images/SiftLogo.png" alt="SyftAI" class="relative w-10 h-10 rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-110">
+                    </div>
+                    <span class="text-xl font-bold">
+                        <span class="text-dark-text dark:text-dark-text">Syft</span><span class="gradient-text">AI</span>
+                    </span>
+                </a>
+
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#features" class="text-sm font-medium text-dark-muted hover:text-dark-text transition-colors">Features</a>
+                    <a href="#how-it-works" class="text-sm font-medium text-dark-muted hover:text-dark-text transition-colors">How it Works</a>
+                    <a href="#pricing" class="text-sm font-medium text-dark-muted hover:text-dark-text transition-colors">Pricing</a>
+                    <a href="#testimonials" class="text-sm font-medium text-dark-muted hover:text-dark-text transition-colors">Reviews</a>
+                    
+                    <div class="w-px h-6 bg-dark-border"></div>
+                    
+                    <button id="theme-toggle" class="p-2 rounded-lg text-dark-muted hover:text-dark-text hover:bg-dark-surface transition-all" title="Toggle theme">
+                        <i data-lucide="sun" class="w-5 h-5 theme-icon theme-icon-light"></i>
+                        <i data-lucide="moon" class="w-5 h-5 theme-icon theme-icon-dark"></i>
+                        <i data-lucide="monitor" class="w-5 h-5 theme-icon theme-icon-system"></i>
+                    </button>
+                    
+                    <a href="https://app.syftup.com" class="relative inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-sift-primary to-sift-secondary text-white text-sm font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-sift-primary/25 hover:-translate-y-0.5 group overflow-hidden">
+                        <span class="relative z-10">Get Started</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 relative z-10 transition-transform group-hover:translate-x-1"></i>
+                        <div class="absolute inset-0 bg-gradient-to-r from-sift-secondary to-sift-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-dark-muted hover:text-dark-text">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-dark-border">
+            <div class="px-4 py-6 space-y-4">
+                <a href="#features" class="block text-base font-medium text-dark-muted hover:text-dark-text">Features</a>
+                <a href="#how-it-works" class="block text-base font-medium text-dark-muted hover:text-dark-text">How it Works</a>
+                <a href="#pricing" class="block text-base font-medium text-dark-muted hover:text-dark-text">Pricing</a>
+                <a href="#testimonials" class="block text-base font-medium text-dark-muted hover:text-dark-text">Reviews</a>
+                <a href="https://app.syftup.com" class="block w-full text-center bg-sift-primary text-white py-3 rounded-xl font-semibold mt-4">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 bg-hero-pattern opacity-50"></div>
+        <div class="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-sift-primary/10 rounded-full blur-[150px] animate-pulse-soft"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-sift-secondary/10 rounded-full blur-[150px] animate-pulse-soft" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sift-accent/5 rounded-full blur-[200px]"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                
+                <div class="text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark-surface border border-dark-border text-sm font-medium mb-8 reveal">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sift-success opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-sift-success"></span>
+                        </span>
+                        <span class="text-dark-muted">AI-Powered Recruitment</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-6 reveal" style="animation-delay: 0.1s;">
+                        Hire the <span class="gradient-text">top 1%</span>
+                        <br>
+                        <span class="text-dark-muted">Cut the noise.</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-dark-muted max-w-xl mx-auto lg:mx-0 mb-10 reveal" style="animation-delay: 0.2s;">
+                        The AI recruitment platform that analyzes every CV, scores every candidate, and ranks them by actual skillnot keyword matching.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start reveal" style="animation-delay: 0.3s;">
+                        <a href="https://app.syftup.com/signup" class="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-sift-primary to-sift-secondary text-white text-lg font-bold rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-sift-primary/30 hover:-translate-y-1 overflow-hidden">
+                            <span class="relative z-10">Start Free Today</span>
+                            <i data-lucide="sparkles" class="w-5 h-5 relative z-10"></i>
+                            <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                        </a>
+                        <a href="#demo" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-dark-surface border border-dark-border text-dark-text text-lg font-semibold rounded-2xl transition-all duration-300 hover:bg-dark-secondary hover:border-sift-primary/50">
+                            <i data-lucide="play-circle" class="w-5 h-5 text-sift-primary"></i>
+                            Watch Demo
+                        </a>
+                    </div>
+
+                    <div class="mt-12 flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start reveal" style="animation-delay: 0.4s;">
+                        <div class="flex -space-x-3">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" class="w-10 h-10 rounded-full border-2 border-dark-bg" alt="">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=David" class="w-10 h-10 rounded-full border-2 border-dark-bg" alt="">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Priya" class="w-10 h-10 rounded-full border-2 border-dark-bg" alt="">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=James" class="w-10 h-10 rounded-full border-2 border-dark-bg" alt="">
+                            <div class="w-10 h-10 rounded-full border-2 border-dark-bg bg-sift-primary flex items-center justify-center text-xs font-bold text-white">+99</div>
+                        </div>
+                        <div class="text-center sm:text-left">
+                            <div class="flex items-center gap-1 justify-center sm:justify-start">
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            </div>
+                            <p class="text-sm text-dark-muted mt-1">Trusted by <span class="text-dark-text font-semibold">500+</span> hiring teams</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative reveal" style="animation-delay: 0.5s;">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-sift-primary/20 via-sift-secondary/20 to-sift-accent/20 rounded-3xl blur-2xl"></div>
+                        
+                        <div class="relative bg-dark-surface border border-dark-border rounded-2xl overflow-hidden shadow-2xl">
+                            <div class="flex items-center gap-2 px-4 py-3 border-b border-dark-border bg-dark-bg/50">
+                                <div class="flex gap-1.5">
+                                    <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                                </div>
+                                <div class="flex-1 mx-4">
+                                    <div class="bg-dark-secondary rounded-lg px-3 py-1 text-xs text-dark-muted text-center font-mono">
+                                        app.syftup.com/jobs/senior-designer
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-6">
+                                    <div>
+                                        <p class="text-xs font-semibold text-sift-primary uppercase tracking-wider">Senior Product Designer</p>
+                                        <h3 class="text-xl font-bold text-dark-text mt-1">Candidates (247)</h3>
+                                    </div>
+                                    <button class="px-4 py-2 bg-sift-primary text-white text-sm font-semibold rounded-lg">
+                                        AI Filter
+                                    </button>
+                                </div>
+
+                                <div class="space-y-3">
+                                    <div class="group flex items-center gap-4 p-4 bg-dark-bg/50 border border-dark-border rounded-xl hover:border-sift-primary/50 transition-all cursor-pointer">
+                                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-sift-primary to-sift-secondary flex items-center justify-center text-white font-bold text-sm">
+                                            ER
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <p class="font-semibold text-dark-text truncate">Elena Rodriguez</p>
+                                            <p class="text-xs text-dark-muted">Applied 5 minutes ago</p>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <div class="text-right">
+                                                <p class="text-lg font-bold text-sift-success">98%</p>
+                                                <p class="text-[10px] text-dark-muted uppercase">Match</p>
+                                            </div>
+                                            <span class="px-2 py-1 bg-sift-success/10 border border-sift-success/30 text-sift-success text-xs font-bold rounded-full">
+                                                Top 1%
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="group flex items-center gap-4 p-4 bg-dark-bg/50 border border-dark-border rounded-xl hover:border-sift-primary/50 transition-all cursor-pointer">
+                                        <div class="w-10 h-10 rounded-full bg-dark-secondary flex items-center justify-center text-dark-muted font-bold text-sm">
+                                            MC
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <p class="font-semibold text-dark-text truncate">Marcus Chen</p>
+                                            <p class="text-xs text-dark-muted">Applied 12 minutes ago</p>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <div class="text-right">
+                                                <p class="text-lg font-bold text-sift-primary">87%</p>
+                                                <p class="text-[10px] text-dark-muted uppercase">Match</p>
+                                            </div>
+                                            <span class="px-2 py-1 bg-sift-primary/10 border border-sift-primary/30 text-sift-primary text-xs font-bold rounded-full">
+                                                Strong
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="group flex items-center gap-4 p-4 bg-dark-bg/50 border border-dark-border rounded-xl hover:border-sift-primary/50 transition-all cursor-pointer opacity-60">
+                                        <div class="w-10 h-10 rounded-full bg-dark-secondary flex items-center justify-center text-dark-muted font-bold text-sm">
+                                            JW
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <p class="font-semibold text-dark-text truncate">James Wilson</p>
+                                            <p class="text-xs text-dark-muted">Applied 28 minutes ago</p>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <div class="text-right">
+                                                <p class="text-lg font-bold text-sift-warning">62%</p>
+                                                <p class="text-[10px] text-dark-muted uppercase">Match</p>
+                                            </div>
+                                            <span class="px-2 py-1 bg-dark-secondary text-dark-muted text-xs font-bold rounded-full">
+                                                Review
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-6 pt-4 border-t border-dark-border grid grid-cols-3 gap-4 text-center">
+                                    <div>
+                                        <p class="text-2xl font-bold text-sift-success">23</p>
+                                        <p class="text-xs text-dark-muted">Top Matches</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-2xl font-bold text-sift-primary">89</p>
+                                        <p class="text-xs text-dark-muted">To Review</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-2xl font-bold text-dark-muted">135</p>
+                                        <p class="text-xs text-dark-muted">Auto-Filtered</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute -top-6 -right-6 bg-dark-surface border border-dark-border rounded-xl p-3 shadow-xl animate-float">
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 rounded-lg bg-sift-success/20 flex items-center justify-center">
+                                    <i data-lucide="trending-up" class="w-4 h-4 text-sift-success"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-dark-muted">Time Saved</p>
+                                    <p class="text-sm font-bold text-dark-text">12 hours</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute -bottom-4 -left-4 bg-dark-surface border border-dark-border rounded-xl p-3 shadow-xl animate-float-delayed">
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 rounded-lg bg-sift-primary/20 flex items-center justify-center">
+                                    <i data-lucide="zap" class="w-4 h-4 text-sift-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-dark-muted">AI Processed</p>
+                                    <p class="text-sm font-bold text-dark-text">247 CVs</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-soft">
+            <a href="#features" class="flex flex-col items-center text-dark-muted hover:text-dark-text transition-colors">
+                <span class="text-xs mb-2">Scroll to explore</span>
+                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="relative py-20 border-y border-dark-border bg-dark-surface/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center reveal">
+                    <p class="text-4xl md:text-5xl font-bold gradient-text counter" data-target="50000">0</p>
+                    <p class="text-dark-muted mt-2">Candidates Processed</p>
+                </div>
+                <div class="text-center reveal" style="animation-delay: 0.1s;">
+                    <p class="text-4xl md:text-5xl font-bold gradient-text counter" data-target="98">0</p>
+                    <p class="text-dark-muted mt-2">% Accuracy Rate</p>
+                </div>
+                <div class="text-center reveal" style="animation-delay: 0.2s;">
+                    <p class="text-4xl md:text-5xl font-bold gradient-text counter" data-target="12">0</p>
+                    <p class="text-dark-muted mt-2">Hours Saved / Hire</p>
+                </div>
+                <div class="text-center reveal" style="animation-delay: 0.3s;">
+                    <p class="text-4xl md:text-5xl font-bold gradient-text counter" data-target="500">0</p>
+                    <p class="text-dark-muted mt-2">Happy Companies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features" class="relative py-24 overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-sift-primary/5 to-transparent pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sift-primary/10 border border-sift-primary/30 text-sm font-semibold text-sift-primary mb-6 reveal">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    <span>Powerful Features</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark-text mb-6 reveal" style="animation-delay: 0.1s;">
+                    Everything you need to<br><span class="gradient-text">hire smarter</span>
+                </h2>
+                <p class="text-lg text-dark-muted reveal" style="animation-delay: 0.2s;">
+                    Stop drowning in CVs. Let AI do the heavy lifting while you focus on what mattersfinding the perfect candidate.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card group relative bg-dark-surface border border-dark-border rounded-2xl p-8 card-hover reveal">
+                    <div class="feature-icon w-14 h-14 rounded-xl bg-gradient-to-br from-sift-primary/20 to-sift-secondary/20 border border-sift-primary/30 flex items-center justify-center mb-6">
+                        <i data-lucide="brain" class="w-7 h-7 text-sift-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-text mb-3">AI-Powered Scoring</h3>
+                    <p class="text-dark-muted">Every candidate gets an instant AI score from 1-10 based on skills, experience, and job fitnot keyword matching.</p>
+                </div>
+
+                <div class="feature-card group relative bg-dark-surface border border-dark-border rounded-2xl p-8 card-hover reveal" style="animation-delay: 0.1s;">
+                    <div class="feature-icon w-14 h-14 rounded-xl bg-gradient-to-br from-sift-success/20 to-sift-accent/20 border border-sift-success/30 flex items-center justify-center mb-6">
+                        <i data-lucide="file-search" class="w-7 h-7 text-sift-success"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-text mb-3">Smart CV Analysis</h3>
+                    <p class="text-dark-muted">Upload CVs and let AI extract key information, identify skills gaps, and match against your requirements automatically.</p>
+                </div>
+
+                <div class="feature-card group relative bg-dark-surface border border-dark-border rounded-2xl p-8 card-hover reveal" style="animation-delay: 0.2s;">
+                    <div class="feature-icon w-14 h-14 rounded-xl bg-gradient-to-br from-sift-warning/20 to-sift-error/20 border border-sift-warning/30 flex items-center justify-center mb-6">
+                        <i data-lucide="list-ordered" class="w-7 h-7 text-sift-warning"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-text mb-3">Instant Ranking</h3>
+                    <p class="text-dark-muted">See your top candidates instantly ranked on a leaderboard. No more manual sorting through hundreds of applications.</p>
+                </div>
+
+                <div class="feature-card group relative bg-dark-surface border border-dark-border rounded-2xl p-8 card-hover reveal" style="animation-delay: 0.3s;">
+                    <div class="feature-icon w-14 h-14 rounded-xl bg-gradient-to-br from-sift-info/20 to-sift-primary/20 border border-sift-info/30 flex items-center justify-center mb-6">
+                        <i data-lucide="mail" class="w-7 h-7 text-sift-info"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-text mb-3">Automated Emails</h3>
+                    <p class="text-dark-muted">Send personalized acceptance or rejection emails with one click. Never ghost a candidate again.</p>
+                </div>
+
+                <div class="feature-card group relative bg-dark-surface border border-dark-border rounded-2xl p-8 card-hover reveal" style="animation-delay: 0.4s;">
+                    <div class="feature-icon w-14 h-14 rounded-xl bg-gradient-to-br from-sift-secondary/20 to-sift-primary/20 border border-sift-secondary/30 flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check" class="w-7 h-7 text-sift-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-text mb-3">Spam Detection</h3>
+                    <p class="text-dark-muted">AI automatically filters out spam applications, copy-paste responses, and low-effort submissions.</p>
+                </div>
+
+                <div class="feature-card group relative bg-dark-surface border border-dark-border rounded-2xl p-8 card-hover reveal" style="animation-delay: 0.5s;">
+                    <div class="feature-icon w-14 h-14 rounded-xl bg-gradient-to-br from-sift-accent/20 to-sift-success/20 border border-sift-accent/30 flex items-center justify-center mb-6">
+                        <i data-lucide="file-spreadsheet" class="w-7 h-7 text-sift-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-text mb-3">Excel Export</h3>
+                    <p class="text-dark-muted">Export your candidate data with scores, notes, and contact info to Excel with one click.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS SECTION -->
+    <section id="how-it-works" class="relative py-24 bg-dark-surface/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sift-secondary/10 border border-sift-secondary/30 text-sm font-semibold text-sift-secondary mb-6 reveal">
+                    <i data-lucide="route" class="w-4 h-4"></i>
+                    <span>Simple Process</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark-text mb-6 reveal" style="animation-delay: 0.1s;">
+                    From chaos to clarity<br><span class="gradient-text">in 3 steps</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+                <div class="relative reveal">
+                    <div class="absolute top-12 left-1/2 w-full h-0.5 bg-gradient-to-r from-transparent via-sift-primary/30 to-sift-primary/30 hidden md:block"></div>
+                    <div class="relative text-center">
+                        <div class="w-24 h-24 mx-auto rounded-2xl bg-gradient-to-br from-sift-primary to-sift-secondary flex items-center justify-center text-4xl font-bold text-white shadow-lg shadow-sift-primary/30 mb-6">
+                            1
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-text mb-3">Create Your Job</h3>
+                        <p class="text-dark-muted">Add your job details and screening questions. Our AI learns what you're looking for.</p>
+                    </div>
+                </div>
+
+                <div class="relative reveal" style="animation-delay: 0.2s;">
+                    <div class="absolute top-12 left-1/2 w-full h-0.5 bg-gradient-to-r from-sift-primary/30 via-sift-secondary/30 to-sift-secondary/30 hidden md:block"></div>
+                    <div class="relative text-center">
+                        <div class="w-24 h-24 mx-auto rounded-2xl bg-gradient-to-br from-sift-secondary to-sift-accent flex items-center justify-center text-4xl font-bold text-white shadow-lg shadow-sift-secondary/30 mb-6">
+                            2
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-text mb-3">Share & Collect</h3>
+                        <p class="text-dark-muted">Share your job link. Candidates apply and AI instantly scores each submission.</p>
+                    </div>
+                </div>
+
+                <div class="relative reveal" style="animation-delay: 0.4s;">
+                    <div class="relative text-center">
+                        <div class="w-24 h-24 mx-auto rounded-2xl bg-gradient-to-br from-sift-accent to-sift-success flex items-center justify-center text-4xl font-bold text-white shadow-lg shadow-sift-accent/30 mb-6">
+                            3
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-text mb-3">Review Top Matches</h3>
+                        <p class="text-dark-muted">Focus only on your top-ranked candidates. Email, shortlist, or export with one click.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="relative py-24 overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-sift-primary/5 rounded-full blur-[200px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sift-success/10 border border-sift-success/30 text-sm font-semibold text-sift-success mb-6 reveal">
+                    <i data-lucide="tag" class="w-4 h-4"></i>
+                    <span>Simple Pricing</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark-text mb-6 reveal" style="animation-delay: 0.1s;">
+                    Start free.<br><span class="gradient-text">Scale when ready.</span>
+                </h2>
+                <p class="text-lg text-dark-muted reveal" style="animation-delay: 0.2s;">
+                    No contracts. No hidden fees. Cancel anytime.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <div class="relative bg-dark-surface border border-dark-border rounded-3xl p-8 card-hover reveal">
+                    <div class="mb-8">
+                        <h3 class="text-lg font-bold text-dark-muted uppercase tracking-wider">Free Starter</h3>
+                        <div class="mt-4 flex items-baseline gap-2">
+                            <span class="text-5xl font-extrabold text-dark-text">$0</span>
+                            <span class="text-dark-muted">/ forever</span>
+                        </div>
+                        <p class="mt-4 text-sm text-dark-muted">Test the waters. Great for a single quick hire.</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-dark-text">
+                            <i data-lucide="check" class="w-5 h-5 text-dark-muted flex-shrink-0"></i>
+                            <span>1 Active Job Post</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-dark-text">
+                            <i data-lucide="check" class="w-5 h-5 text-dark-muted flex-shrink-0"></i>
+                            <span>Analyze first <strong>40 Candidates</strong></span>
+                        </li>
+                        <li class="flex items-center gap-3 text-dark-text">
+                            <i data-lucide="check" class="w-5 h-5 text-dark-muted flex-shrink-0"></i>
+                            <span>Basic AI Score</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-dark-muted line-through opacity-50">
+                            <i data-lucide="x" class="w-5 h-5 flex-shrink-0"></i>
+                            <span>No Emailing</span>
+                        </li>
+                    </ul>
+
+                    <a href="https://app.syftup.com/signup" class="block w-full py-4 text-center font-bold rounded-xl border-2 border-dark-border text-dark-text hover:border-sift-primary hover:bg-dark-secondary transition-all duration-300">
+                        Start Free
+                    </a>
+                </div>
+
+                <div class="relative bg-dark-surface border-2 border-sift-primary rounded-3xl p-8 lg:-translate-y-4 shadow-2xl shadow-sift-primary/20 card-hover reveal" style="animation-delay: 0.1s;">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-gradient-to-r from-sift-primary to-sift-secondary rounded-full text-xs font-bold text-white uppercase tracking-wider shadow-lg">
+                        Best Value
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-lg font-bold text-sift-primary uppercase tracking-wider">Standard Growth</h3>
+                        <div class="mt-4 flex items-baseline gap-2">
+                            <span class="text-5xl font-extrabold text-dark-text">$7</span>
+                            <span class="text-dark-muted">/ month</span>
+                        </div>
+                        <p class="mt-4 text-sm text-dark-muted">For small businesses. Unlock emailing and up to 3 roles.</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-dark-text font-medium">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-sift-primary flex-shrink-0"></i>
+                            <span><strong>3 Active Job Posts</strong></span>
+                        </li>
+                        <li class="flex items-center gap-3 text-dark-text">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-sift-primary flex-shrink-0"></i>
+                            <span>Analyze up to <strong>250 Candidates</strong></span>
+                        </li>
+                        <li class="flex items-center gap-3 text-dark-text">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-sift-primary flex-shrink-0"></i>
+                            <span>Unlock Candidate Emailing</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-dark-text">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-sift-primary flex-shrink-0"></i>
+                            <span>Extra job slots for <strong>$3</strong></span>
+                        </li>
+                    </ul>
+
+                    <a href="https://app.syftup.com/signup?plan=standard" class="block w-full py-4 text-center font-bold rounded-xl bg-gradient-to-r from-sift-primary to-sift-secondary text-white hover:shadow-lg hover:shadow-sift-primary/30 transition-all duration-300 hover:-translate-y-0.5">
+                        Get Standard - $7
+                    </a>
+                </div>
+
+                <div class="relative bg-dark-surface border border-dark-border rounded-3xl p-8 card-hover reveal" style="animation-delay: 0.2s;">
+                    <div class="mb-8">
+                        <h3 class="text-lg font-bold text-sift-secondary uppercase tracking-wider">Agency Pro</h3>
+                        <div class="mt-4 flex items-baseline gap-2">
+                            <span class="text-5xl font-extrabold text-dark-text">$25</span>
+                            <span class="text-dark-muted">/ month</span>
+                        </div>
+                        <p class="mt-4 text-sm text-dark-muted">Power & Volume. Bulk tools and high job limits.</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-dark-text font-medium">
+                            <i data-lucide="zap" class="w-5 h-5 text-sift-secondary flex-shrink-0"></i>
+                            <span><strong>7 Active Job Posts</strong></span>
+                        </li>
+                        <li class="flex items-center gap-3 text-dark-text font-medium">
+                            <i data-lucide="infinity" class="w-5 h-5 text-sift-secondary flex-shrink-0"></i>
+                            <span><strong>Unlimited Candidates</strong></span>
+                        </li>
+                        <li class="flex items-center gap-3 text-dark-text">
+                            <i data-lucide="mail-check" class="w-5 h-5 text-sift-secondary flex-shrink-0"></i>
+                            <span>Bulk Emailing & Excel Export</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-dark-text">
+                            <i data-lucide="plus-circle" class="w-5 h-5 text-sift-secondary flex-shrink-0"></i>
+                            <span>Extra job slots for <strong>$2</strong></span>
+                        </li>
+                    </ul>
+
+                    <a href="https://app.syftup.com/signup?plan=agency" class="block w-full py-4 text-center font-bold rounded-xl bg-dark-bg border-2 border-dark-border text-dark-text hover:border-sift-secondary hover:bg-dark-secondary transition-all duration-300">
+                        Go Pro - $25
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="relative py-24 bg-dark-surface/50 border-y border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-dark-text mb-4 reveal">
+                    Loved by <span class="gradient-text">hiring teams</span>
+                </h2>
+                <div class="flex items-center justify-center gap-1 reveal" style="animation-delay: 0.1s;">
+                    <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                    <span class="ml-2 text-dark-muted">5.0 rating from 200+ reviews</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-dark-bg border border-dark-border rounded-2xl p-8 card-hover reveal">
+                    <div class="flex gap-1 mb-6">
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    </div>
+                    <p class="text-dark-text text-lg mb-6">"We couldn't handle the volume of remote applicants. SyftAI turned a 3-day nightmare into a 2-hour task. Absolutely game-changing."</p>
+                    <div class="flex items-center gap-4 pt-6 border-t border-dark-border">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" class="w-12 h-12 rounded-full bg-dark-surface" alt="Sarah">
+                        <div>
+                            <p class="font-bold text-dark-text">Sarah Jenkins</p>
+                            <p class="text-sm text-dark-muted">Head of People, TechFlow</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-bg border border-dark-border rounded-2xl p-8 card-hover reveal" style="animation-delay: 0.1s;">
+                    <div class="flex gap-1 mb-6">
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    </div>
+                    <p class="text-dark-text text-lg mb-6">"The candidates actually prefer it. They get to show their skills instead of their formatting abilities. Our hire quality went up 3x."</p>
+                    <div class="flex items-center gap-4 pt-6 border-t border-dark-border">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=David" class="w-12 h-12 rounded-full bg-dark-surface" alt="David">
+                        <div>
+                            <p class="font-bold text-dark-text">David Chen</p>
+                            <p class="text-sm text-dark-muted">CTO, StartUp Inc</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-bg border border-dark-border rounded-2xl p-8 card-hover reveal" style="animation-delay: 0.2s;">
+                    <div class="flex gap-1 mb-6">
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    </div>
+                    <p class="text-dark-text text-lg mb-6">"I haven't opened a PDF resume in 6 months. It feels like magic. The automated rejection emails saved my reputation with candidates."</p>
+                    <div class="flex items-center gap-4 pt-6 border-t border-dark-border">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Priya" class="w-12 h-12 rounded-full bg-dark-surface" alt="Priya">
+                        <div>
+                            <p class="font-bold text-dark-text">Priya Patel</p>
+                            <p class="text-sm text-dark-muted">Recruiter, AgencyGlobal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="relative py-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-dark-text mb-4 reveal">
+                    Frequently Asked <span class="gradient-text">Questions</span>
+                </h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="faq-item bg-dark-surface border border-dark-border rounded-xl overflow-hidden reveal">
+                    <button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="text-lg font-semibold text-dark-text">Is it really free to start?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-dark-muted transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-dark-muted">
+                        Yes! You can post 1 job and grade up to 40 candidates completely free. You only pay if you need more jobs or premium features like bulk emailing.
+                    </div>
+                </div>
+
+                <div class="faq-item bg-dark-surface border border-dark-border rounded-xl overflow-hidden reveal" style="animation-delay: 0.1s;">
+                    <button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="text-lg font-semibold text-dark-text">Does the AI reject candidates automatically?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-dark-muted transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-dark-muted">
+                        No. The AI scores every candidate from 1-10, but you make the final decision. You can choose to auto-reject low scores, but it's always under your control.
+                    </div>
+                </div>
+
+                <div class="faq-item bg-dark-surface border border-dark-border rounded-xl overflow-hidden reveal" style="animation-delay: 0.2s;">
+                    <button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="text-lg font-semibold text-dark-text">Can I cancel anytime?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-dark-muted transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-dark-muted">
+                        Absolutely. Subscribe for one month to handle a hiring burst and cancel immediately. No long-term contracts, no questions asked.
+                    </div>
+                </div>
+
+                <div class="faq-item bg-dark-surface border border-dark-border rounded-xl overflow-hidden reveal" style="animation-delay: 0.3s;">
+                    <button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="text-lg font-semibold text-dark-text">How does the AI scoring work?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-dark-muted transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-dark-muted">
+                        Our AI analyzes candidate responses against your job requirements, evaluating skills match, experience relevance, and answer quality. Each candidate gets a score from 1-10 with detailed reasoning.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="relative py-24 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-sift-primary/10 via-sift-secondary/10 to-sift-accent/10"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sift-primary/20 rounded-full blur-[150px]"></div>
+
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark-text mb-6 reveal">
+                Ready to hire <span class="gradient-text">smarter</span>?
+            </h2>
+            <p class="text-xl text-dark-muted mb-10 reveal" style="animation-delay: 0.1s;">
+                Join 500+ companies using SyftAI to find their perfect candidates faster.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center reveal" style="animation-delay: 0.2s;">
+                <a href="https://app.syftup.com/signup" class="inline-flex items-center justify-center gap-2 px-10 py-4 bg-gradient-to-r from-sift-primary to-sift-secondary text-white text-lg font-bold rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-sift-primary/30 hover:-translate-y-1">
+                    Start Free Today
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <a href="mailto:hello@syftup.com" class="inline-flex items-center justify-center gap-2 px-10 py-4 bg-dark-surface border border-dark-border text-dark-text text-lg font-semibold rounded-2xl transition-all duration-300 hover:border-sift-primary/50">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    Contact Sales
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark-bg border-t border-dark-border py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <a href="#" class="flex items-center gap-3 mb-4">
+                        <img src="Images/SiftLogo.png" alt="SyftAI" class="w-10 h-10 rounded-xl">
+                        <span class="text-xl font-bold text-dark-text">Syft<span class="gradient-text">AI</span></span>
+                    </a>
+                    <p class="text-dark-muted mb-6 max-w-sm">
+                        The AI-powered recruitment platform that helps you hire the top 1% while cutting through the noise.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-lg bg-dark-surface border border-dark-border flex items-center justify-center text-dark-muted hover:text-sift-primary hover:border-sift-primary/50 transition-all">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-lg bg-dark-surface border border-dark-border flex items-center justify-center text-dark-muted hover:text-sift-primary hover:border-sift-primary/50 transition-all">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="mailto:hello@syftup.com" class="w-10 h-10 rounded-lg bg-dark-surface border border-dark-border flex items-center justify-center text-dark-muted hover:text-sift-primary hover:border-sift-primary/50 transition-all">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-dark-text mb-4">Product</h4>
+                    <ul class="space-y-3 text-dark-muted">
+                        <li><a href="#features" class="hover:text-dark-text transition-colors">Features</a></li>
+                        <li><a href="#pricing" class="hover:text-dark-text transition-colors">Pricing</a></li>
+                        <li><a href="#how-it-works" class="hover:text-dark-text transition-colors">How it Works</a></li>
+                        <li><a href="#testimonials" class="hover:text-dark-text transition-colors">Reviews</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-dark-text mb-4">Legal</h4>
+                    <ul class="space-y-3 text-dark-muted">
+                        <li><a href="privacy_policy.html" class="hover:text-dark-text transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms_of_service.html" class="hover:text-dark-text transition-colors">Terms of Service</a></li>
+                        <li><a href="mailto:hello@syftup.com" class="hover:text-dark-text transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-dark-border flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-dark-muted">
+                    &copy; 2026 SyftAI. All rights reserved.
+                </p>
+                <p class="text-sm text-dark-muted">
+                    Made with <span class="text-sift-error">&#9829;</span> for hiring teams worldwide
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        lucide.createIcons();
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.setAttribute('data-lucide', mobileMenu.classList.contains('hidden') ? 'menu' : 'x');
+            lucide.createIcons();
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.querySelector('i').setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass');
+            } else {
+                navbar.classList.remove('glass');
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '#demo') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        const themes = ['light', 'dark', 'system'];
+        
+        function getSystemTheme() {
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        
+        function applyTheme(theme) {
+            const effectiveTheme = theme === 'system' ? getSystemTheme() : theme;
+            html.classList.toggle('dark', effectiveTheme === 'dark');
+            
+            document.querySelectorAll('.theme-icon').forEach(icon => icon.style.display = 'none');
+            const activeIcon = document.querySelector(`.theme-icon-${theme}`);
+            if (activeIcon) activeIcon.style.display = 'block';
+        }
+        
+        let currentTheme = localStorage.getItem('theme') || 'dark';
+        applyTheme(currentTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const currentIndex = themes.indexOf(currentTheme);
+            currentTheme = themes[(currentIndex + 1) % themes.length];
+            localStorage.setItem('theme', currentTheme);
+            applyTheme(currentTheme);
+        });
+        
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+            if (currentTheme === 'system') {
+                applyTheme('system');
+            }
+        });
+
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            document.querySelectorAll('.faq-content').forEach(item => {
+                if (item !== content) {
+                    item.classList.add('hidden');
+                    item.previousElementSibling.querySelector('i').style.transform = '';
+                }
+            });
+
+            content.classList.toggle('hidden');
+            icon.style.transform = content.classList.contains('hidden') ? '' : 'rotate(180deg)';
+        }
+
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        function animateCounter(element, target) {
+            const duration = 2000;
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString() + (element.dataset.suffix || '');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString();
+                }
+            }, 16);
+        }
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.dataset.target);
+                    animateCounter(entry.target, target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.counter').forEach(counter => {
+            counterObserver.observe(counter);
+        });
+    </script>
+</body>
+</html>

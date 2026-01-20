@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Syft AI</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            surface: 'var(--brand-surface)',
+                            card: 'var(--brand-card)',
+                            onSurface: 'var(--brand-on-surface)',
+                            muted: 'var(--brand-muted)',
+                            divider: 'var(--brand-divider)',
+                            primary: 'var(--brand-primary)',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --brand-surface: #ffffff;
+            --brand-card: #f9fafb;
+            --brand-on-surface: #111827;
+            --brand-muted: #6b7280;
+            --brand-divider: #e5e7eb;
+            --brand-primary: #4f46e5;
+        }
+
+        .dark {
+            --brand-surface: #1A1A2E;
+            --brand-card: #1F1F3A;
+            --brand-on-surface: #E4E4E7;
+            --brand-muted: #9CA3AF;
+            --brand-divider: #374151;
+            --brand-primary: #6366f1;
+        }
+
+        body { 
+            background-color: var(--brand-surface); 
+            color: var(--brand-on-surface); 
+            font-family: 'Inter', sans-serif;
+        }
+        
+        h2 { font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; color: var(--brand-on-surface); }
+        h3 { font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--brand-on-surface); }
+        p, ul { color: var(--brand-muted); line-height: 1.6; margin-bottom: 1rem; }
+        ul { list-style-type: disc; padding-left: 1.5rem; }
+    </style>
+</head>
+<body class="antialiased dark"> <!-- Default to Dark mode for consistency -->
+    
+    <div class="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <div class="mb-12 border-b border-brand-divider pb-8">
+            <a href="index.html" class="inline-flex items-center gap-2 text-brand-primary hover:text-brand-onSurface transition mb-6">
+                ← Back to Home
+            </a>
+            <h1 class="text-4xl font-extrabold tracking-tight text-brand-onSurface">Privacy Policy</h1>
+            <p class="mt-4 text-brand-muted">Last Updated: January 5, 2026</p>
+        </div>
+
+        <div class="prose prose-lg prose-invert max-w-none">
+            <p>Welcome to Syft AI. We respect your privacy and are committed to protecting the personal data of both recruiters and candidates who use our platform.</p>
+
+            <h2>1. Information We Collect</h2>
+            <h3>Recruiters</h3>
+            <ul>
+                <li><strong>Account Data:</strong> Name, email address, company name, and payment information (processed securely via Paystack/LemonSqueezy).</li>
+                <li><strong>Job Data:</strong> Job descriptions, screening questions, and hiring criteria.</li>
+            </ul>
+            <h3>Candidates</h3>
+            <ul>
+                <li><strong>Application Data:</strong> Name, email address, LinkedIn profile, and answers to screening questions submitted via Syft Links.</li>
+                <li><strong>Uploaded Documents:</strong> Resumes/CVs (if applicable).</li>
+            </ul>
+
+            <h2>2. How We Use AI</h2>
+            <p>Syft AI utilizes Large Language Models (LLMs) such as OpenAI and Google Gemini to process candidate applications. Specifically:</p>
+            <ul>
+                <li><strong>Ranking & Scoring:</strong> We send anonymized candidate answers to our AI partners to evaluate them against the recruiter's job description.</li>
+                <li><strong>Summarization:</strong> We generate brief summaries of candidate profiles to assist recruiters.</li>
+            </ul>
+            <p><strong>Note:</strong> We do not use candidate data to train public AI models.</p>
+
+            <h2>3. Third-Party Processors</h2>
+            <p>We share data with the following trusted third-party service providers to operate our service:</p>
+            <ul>
+                <li><strong>AI Providers:</strong> OpenAI, Google (for grading logic).</li>
+                <li><strong>Hosting:</strong> Railway/AWS (for secure server infrastructure).</li>
+                <li><strong>Email:</strong> Resend (for transactional emails).</li>
+                <li><strong>Payments:</strong> Paystack (for secure payment processing).</li>
+            </ul>
+
+            <h2>4. Data Retention</h2>
+            <p>We retain candidate data for the duration of the hiring process. Recruiters may choose to delete job posts and associated candidate data at any time. We automatically archive inactive data after 24 months unless requested otherwise.</p>
+
+            <h2>5. Your Rights</h2>
+            <p>You have the right to access, correct, or delete your personal data. Candidates wishing to delete their data should contact the recruiter who posted the job or contact us directly at support@syft.ai.</p>
+
+            <h2>6. Contact Us</h2>
+            <p>If you have questions about this policy, please contact us at privacy@syft.ai.</p>
+        </div>
+        
+        <div class="mt-16 pt-8 border-t border-brand-divider text-center text-sm text-brand-muted">
+            &copy; 2026 Syft AI. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        // Simple Theme Check to match Index
+        if (localStorage.getItem('themeState') === 'light') {
+            document.body.classList.remove('dark');
+        }
+    </script>
+</body>
+</html>
