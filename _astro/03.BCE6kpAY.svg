@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="824" viewBox="0 0 390 824" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="390" height="824" fill="#09090B"/>
+  <text x="26" y="40" fill="#A1A1AA" font-size="13" font-weight="600">9:41</text>
+  <rect x="318" y="30" width="22" height="11" rx="3" fill="none" stroke="#52525B"/>
+  <rect x="320" y="32" width="15" height="7" rx="1.5" fill="#A1A1AA"/>
+
+  <text x="26" y="100" fill="#FAFAFA" font-size="26" font-weight="600">Plans</text>
+  <text x="26" y="126" fill="#71717A" font-size="13">Sized to the time you have</text>
+
+  <!-- streak -->
+  <rect x="26" y="148" width="338" height="96" rx="18" fill="#18181B"/>
+  <text x="44" y="180" fill="#D4AF37" font-size="28" font-weight="700">14</text>
+  <text x="86" y="180" fill="#A1A1AA" font-size="12.5">day streak</text>
+  <text x="44" y="200" fill="#52525B" font-size="11">Missing a day bends the plan, not the streak</text>
+  <g>
+    <circle cx="52" cy="222" r="9" fill="#D4AF37"/><circle cx="80" cy="222" r="9" fill="#D4AF37"/>
+    <circle cx="108" cy="222" r="9" fill="#D4AF37"/><circle cx="136" cy="222" r="9" fill="#D4AF37"/>
+    <circle cx="164" cy="222" r="9" fill="#D4AF37"/><circle cx="192" cy="222" r="9" fill="#212124"/>
+    <circle cx="220" cy="222" r="9" fill="#212124"/>
+  </g>
+
+  <text x="26" y="284" fill="#71717A" font-size="10.5" letter-spacing="2" font-weight="600">TODAY</text>
+
+  <rect x="26" y="300" width="338" height="118" rx="18" fill="#18181B" stroke="#D4AF37" stroke-width="1"/>
+  <rect x="44" y="320" width="72" height="22" rx="11" fill="#212124"/>
+  <text x="80" y="335" fill="#D4AF37" font-size="10.5" text-anchor="middle" font-weight="600">4 MIN</text>
+  <text x="44" y="368" fill="#FAFAFA" font-size="17" font-weight="600">Light in the dark</text>
+  <text x="44" y="390" fill="#A1A1AA" font-size="12.5">John 1 · 3 verses · narrated</text>
+  <rect x="44" y="402" width="302" height="4" rx="2" fill="#2A2A2E"/>
+  <rect x="44" y="402" width="100" height="4" rx="2" fill="#D4AF37"/>
+
+  <text x="26" y="458" fill="#71717A" font-size="10.5" letter-spacing="2" font-weight="600">BROWSE</text>
+
+  <g>
+    <rect x="26" y="474" width="338" height="80" rx="16" fill="#18181B"/>
+    <text x="44" y="504" fill="#FAFAFA" font-size="15" font-weight="600">The Gospels in 40 days</text>
+    <text x="44" y="526" fill="#71717A" font-size="12">12 min a day · full chapters</text>
+    <text x="340" y="516" fill="#D4AF37" font-size="16" text-anchor="end">›</text>
+
+    <rect x="26" y="566" width="338" height="80" rx="16" fill="#18181B"/>
+    <text x="44" y="596" fill="#FAFAFA" font-size="15" font-weight="600">Psalms, one a morning</text>
+    <text x="44" y="618" fill="#71717A" font-size="12">4 min a day · narrated</text>
+    <text x="340" y="608" fill="#D4AF37" font-size="16" text-anchor="end">›</text>
+
+    <rect x="26" y="658" width="338" height="80" rx="16" fill="#18181B"/>
+    <text x="44" y="688" fill="#FAFAFA" font-size="15" font-weight="600">Words of Jesus</text>
+    <text x="44" y="710" fill="#71717A" font-size="12">7 min a day · with roots</text>
+    <text x="340" y="700" fill="#D4AF37" font-size="16" text-anchor="end">›</text>
+  </g>
+
+  <rect x="0" y="760" width="390" height="64" fill="#0C0C0E"/>
+  <line x1="0" y1="760" x2="390" y2="760" stroke="#212124"/>
+  <text x="52" y="812" fill="#52525B" font-size="9.5" text-anchor="middle">Feed</text>
+  <text x="147" y="812" fill="#52525B" font-size="9.5" text-anchor="middle">Search</text>
+  <text x="247" y="812" fill="#D4AF37" font-size="9.5" text-anchor="middle" font-weight="600">Plans</text>
+  <text x="340" y="812" fill="#52525B" font-size="9.5" text-anchor="middle">You</text>
+  <rect x="42" y="782" width="20" height="14" rx="3" fill="none" stroke="#52525B" stroke-width="1.6"/>
+  <circle cx="147" cy="789" r="8" fill="none" stroke="#52525B" stroke-width="1.6"/>
+  <path d="M236 782 h22 v14 h-22 z" fill="#D4AF37"/>
+  <circle cx="340" cy="789" r="8" fill="none" stroke="#52525B" stroke-width="1.6"/>
+  <rect x="128" y="812" width="134" height="4" rx="2" fill="#2A2A2E"/>
+</svg>

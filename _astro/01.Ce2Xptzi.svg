@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="824" viewBox="0 0 390 824" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <radialGradient id="sfBg" cx="50%" cy="42%" r="78%">
+      <stop offset="0%" stop-color="#141418"/><stop offset="62%" stop-color="#0E0E11"/><stop offset="100%" stop-color="#09090B"/>
+    </radialGradient>
+  </defs>
+  <rect width="390" height="824" fill="url(#sfBg)"/>
+
+  <!-- status bar -->
+  <text x="26" y="40" fill="#A1A1AA" font-size="13" font-weight="600">9:41</text>
+  <rect x="318" y="30" width="22" height="11" rx="3" fill="none" stroke="#52525B"/>
+  <rect x="320" y="32" width="15" height="7" rx="1.5" fill="#A1A1AA"/>
+
+  <!-- reference -->
+  <text x="195" y="120" fill="#D4AF37" font-size="12" letter-spacing="2.6" text-anchor="middle" font-weight="600">JOHN 1 · 5</text>
+
+  <!-- verse -->
+  <text fill="#E8E8EA" font-size="27" font-weight="500" text-anchor="middle">
+    <tspan x="195" y="248">The light shines</tspan>
+    <tspan x="195" y="288">in the darkness,</tspan>
+    <tspan x="195" y="328">and the darkness</tspan>
+    <tspan x="195" y="368">has not overcome it.</tspan>
+  </text>
+
+  <!-- tap-a-word hint chip -->
+  <rect x="112" y="404" width="166" height="30" rx="15" fill="#212124"/>
+  <circle cx="133" cy="419" r="4.5" fill="#D4AF37"/>
+  <text x="147" y="424" fill="#A1A1AA" font-size="11.5">Tap a word for its root</text>
+
+  <!-- narration bar -->
+  <rect x="30" y="472" width="330" height="52" rx="26" fill="#18181B"/>
+  <circle cx="58" cy="498" r="15" fill="#D4AF37"/>
+  <path d="M54 491 L54 505 L66 498 Z" fill="#18120A"/>
+  <rect x="84" y="495" width="196" height="4" rx="2" fill="#2A2A2E"/>
+  <rect x="84" y="495" width="78" height="4" rx="2" fill="#D4AF37"/>
+  <text x="298" y="502" fill="#71717A" font-size="11">0:42</text>
+
+  <!-- four lenses -->
+  <text x="30" y="574" fill="#52525B" font-size="10.5" letter-spacing="2" font-weight="600">GO DEEPER</text>
+  <g>
+    <rect x="30" y="588" width="158" height="62" rx="14" fill="#18181B"/>
+    <text x="46" y="614" fill="#FAFAFA" font-size="13" font-weight="600">Plain Words</text>
+    <text x="46" y="632" fill="#71717A" font-size="11">Everyday language</text>
+
+    <rect x="202" y="588" width="158" height="62" rx="14" fill="#18181B"/>
+    <text x="218" y="614" fill="#FAFAFA" font-size="13" font-weight="600">Word Roots</text>
+    <text x="218" y="632" fill="#71717A" font-size="11">Greek &amp; Hebrew</text>
+
+    <rect x="30" y="660" width="158" height="62" rx="14" fill="#18181B"/>
+    <text x="46" y="686" fill="#FAFAFA" font-size="13" font-weight="600">Related</text>
+    <text x="46" y="704" fill="#71717A" font-size="11">Same thought</text>
+
+    <rect x="202" y="660" width="158" height="62" rx="14" fill="#18181B" stroke="#D4AF37" stroke-width="1"/>
+    <text x="218" y="686" fill="#D4AF37" font-size="13" font-weight="600">Full Study</text>
+    <text x="218" y="704" fill="#71717A" font-size="11">All three, in order</text>
+  </g>
+
+  <!-- side actions -->
+  <g fill="#3F3F46">
+    <circle cx="352" cy="250" r="18" fill="#1C1C1F"/>
+    <path d="M346 244 h12 v14 l-6 -4 -6 4 z" fill="#71717A"/>
+    <circle cx="352" cy="300" r="18" fill="#1C1C1F"/>
+    <path d="M352 294 a5 5 0 1 1 -0.01 0 M347 306 h10" stroke="#71717A" stroke-width="1.6" fill="none"/>
+  </g>
+
+  <!-- tab bar -->
+  <rect x="0" y="760" width="390" height="64" fill="#0C0C0E"/>
+  <line x1="0" y1="760" x2="390" y2="760" stroke="#212124"/>
+  <g>
+    <rect x="42" y="782" width="20" height="14" rx="3" fill="#D4AF37"/>
+    <text x="52" y="812" fill="#D4AF37" font-size="9.5" text-anchor="middle" font-weight="600">Feed</text>
+    <circle cx="147" cy="789" r="8" fill="none" stroke="#52525B" stroke-width="1.6"/>
+    <text x="147" y="812" fill="#52525B" font-size="9.5" text-anchor="middle">Search</text>
+    <path d="M236 782 h22 v14 h-22 z" fill="none" stroke="#52525B" stroke-width="1.6"/>
+    <text x="247" y="812" fill="#52525B" font-size="9.5" text-anchor="middle">Plans</text>
+    <circle cx="340" cy="789" r="8" fill="none" stroke="#52525B" stroke-width="1.6"/>
+    <text x="340" y="812" fill="#52525B" font-size="9.5" text-anchor="middle">You</text>
+  </g>
+  <rect x="128" y="812" width="134" height="4" rx="2" fill="#2A2A2E"/>
+</svg>

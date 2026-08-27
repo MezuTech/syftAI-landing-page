@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="1440" height="900" fill="#F8FAFC"/>
+
+  <!-- sidebar -->
+  <rect x="0" y="0" width="248" height="900" fill="#FFFFFF"/>
+  <line x1="248" y1="0" x2="248" y2="900" stroke="#E2E8F0"/>
+  <rect x="28" y="30" width="30" height="30" rx="8" fill="#2563EB"/>
+  <text x="43" y="51" fill="#FFFFFF" font-size="16" font-weight="700" text-anchor="middle">S</text>
+  <text x="68" y="51" fill="#0F172A" font-size="17" font-weight="700">Sift AI</text>
+
+  <rect x="20" y="92" width="208" height="40" rx="10" fill="#EFF6FF"/>
+  <rect x="36" y="105" width="14" height="14" rx="3" fill="#2563EB"/>
+  <text x="62" y="117" fill="#2563EB" font-size="13.5" font-weight="600">Dashboard</text>
+
+  <rect x="36" y="152" width="14" height="14" rx="3" fill="none" stroke="#64748B" stroke-width="1.6"/>
+  <text x="62" y="164" fill="#64748B" font-size="13.5">Jobs</text>
+  <rect x="36" y="196" width="14" height="14" rx="3" fill="none" stroke="#64748B" stroke-width="1.6"/>
+  <text x="62" y="208" fill="#64748B" font-size="13.5">Candidates</text>
+  <rect x="36" y="240" width="14" height="14" rx="3" fill="none" stroke="#64748B" stroke-width="1.6"/>
+  <text x="62" y="252" fill="#64748B" font-size="13.5">Workspaces</text>
+  <rect x="36" y="284" width="14" height="14" rx="3" fill="none" stroke="#64748B" stroke-width="1.6"/>
+  <text x="62" y="296" fill="#64748B" font-size="13.5">Billing</text>
+
+  <rect x="20" y="778" width="208" height="88" rx="12" fill="#F1F5F9"/>
+  <text x="38" y="806" fill="#0F172A" font-size="12.5" font-weight="600">Standard plan</text>
+  <text x="38" y="826" fill="#64748B" font-size="11.5">148 of 250 graded</text>
+  <rect x="38" y="838" width="172" height="6" rx="3" fill="#E2E8F0"/>
+  <rect x="38" y="838" width="102" height="6" rx="3" fill="#2563EB"/>
+
+  <!-- header -->
+  <text x="288" y="60" fill="#0F172A" font-size="25" font-weight="700">Senior Flutter Engineer</text>
+  <rect x="608" y="42" width="76" height="24" rx="12" fill="#DCFCE7"/>
+  <text x="646" y="58" fill="#15803D" font-size="11" text-anchor="middle" font-weight="700">ACTIVE</text>
+  <text x="288" y="86" fill="#64748B" font-size="13">Remote · Full time · Posted 6 days ago · 148 applicants</text>
+
+  <rect x="1174" y="38" width="150" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="1249" y="63" fill="#334155" font-size="13" text-anchor="middle" font-weight="600">Email shortlist</text>
+  <rect x="1336" y="38" width="76" height="40" rx="10" fill="#2563EB"/>
+  <text x="1374" y="63" fill="#FFFFFF" font-size="13" text-anchor="middle" font-weight="600">Share</text>
+
+  <!-- stat cards -->
+  <g>
+    <rect x="288" y="112" width="264" height="96" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="312" y="142" fill="#64748B" font-size="11.5" letter-spacing="1.2" font-weight="600">TOTAL</text>
+    <text x="312" y="182" fill="#0F172A" font-size="30" font-weight="700">148</text>
+
+    <rect x="568" y="112" width="264" height="96" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="592" y="142" fill="#64748B" font-size="11.5" letter-spacing="1.2" font-weight="600">SHORTLISTED</text>
+    <text x="592" y="182" fill="#10B981" font-size="30" font-weight="700">12</text>
+
+    <rect x="848" y="112" width="264" height="96" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="872" y="142" fill="#64748B" font-size="11.5" letter-spacing="1.2" font-weight="600">AVG SCORE</text>
+    <text x="872" y="182" fill="#0F172A" font-size="30" font-weight="700">6.4</text>
+
+    <rect x="1128" y="112" width="284" height="96" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="1152" y="142" fill="#64748B" font-size="11.5" letter-spacing="1.2" font-weight="600">SCORING</text>
+    <text x="1152" y="182" fill="#0F172A" font-size="30" font-weight="700">Done</text>
+    <circle cx="1370" cy="172" r="14" fill="#DCFCE7"/>
+    <path d="M1364 172 l4 5 8 -10" stroke="#15803D" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- filter row -->
+  <rect x="288" y="236" width="112" height="36" rx="18" fill="#2563EB"/>
+  <text x="344" y="259" fill="#FFFFFF" font-size="12.5" text-anchor="middle" font-weight="600">All · 148</text>
+  <rect x="410" y="236" width="128" height="36" rx="18" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="474" y="259" fill="#64748B" font-size="12.5" text-anchor="middle">Shortlisted · 12</text>
+  <rect x="548" y="236" width="112" height="36" rx="18" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="604" y="259" fill="#64748B" font-size="12.5" text-anchor="middle">New · 94</text>
+  <rect x="670" y="236" width="118" height="36" rx="18" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="729" y="259" fill="#64748B" font-size="12.5" text-anchor="middle">Rejected · 42</text>
+  <rect x="1224" y="236" width="188" height="36" rx="18" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="1318" y="259" fill="#64748B" font-size="12.5" text-anchor="middle">Sort: Score, high to low ▾</text>
+
+  <!-- table header -->
+  <text x="312" y="312" fill="#94A3B8" font-size="11" letter-spacing="1.2" font-weight="600">CANDIDATE</text>
+  <text x="720" y="312" fill="#94A3B8" font-size="11" letter-spacing="1.2" font-weight="600">WHY THIS SCORE</text>
+  <text x="1220" y="312" fill="#94A3B8" font-size="11" letter-spacing="1.2" font-weight="600">SCORE</text>
+  <text x="1352" y="312" fill="#94A3B8" font-size="11" letter-spacing="1.2" font-weight="600">STATUS</text>
+
+  <!-- rows -->
+  <g>
+    <rect x="288" y="326" width="1124" height="92" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <circle cx="332" cy="372" r="19" fill="#DBEAFE"/>
+    <text x="332" y="378" fill="#2563EB" font-size="14" text-anchor="middle" font-weight="700">AO</text>
+    <text x="366" y="366" fill="#0F172A" font-size="15" font-weight="600">Amara Okafor</text>
+    <text x="366" y="388" fill="#64748B" font-size="12">6 yrs Flutter · Lagos · answered all 4</text>
+    <text x="720" y="362" fill="#334155" font-size="12.5">Shipped three production Flutter apps; her answer on</text>
+    <text x="720" y="382" fill="#334155" font-size="12.5">state management named trade-offs, not just tools.</text>
+    <rect x="1204" y="356" width="52" height="32" rx="8" fill="#DCFCE7"/>
+    <text x="1230" y="378" fill="#15803D" font-size="16" text-anchor="middle" font-weight="700">9.2</text>
+    <rect x="1330" y="358" width="94" height="28" rx="14" fill="#DCFCE7"/>
+    <text x="1377" y="376" fill="#15803D" font-size="11" text-anchor="middle" font-weight="700">SHORTLISTED</text>
+
+    <rect x="288" y="430" width="1124" height="92" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <circle cx="332" cy="476" r="19" fill="#DBEAFE"/>
+    <text x="332" y="482" fill="#2563EB" font-size="14" text-anchor="middle" font-weight="700">TB</text>
+    <text x="366" y="470" fill="#0F172A" font-size="15" font-weight="600">Tobi Balogun</text>
+    <text x="366" y="492" fill="#64748B" font-size="12">4 yrs Flutter · Remote · answered all 4</text>
+    <text x="720" y="466" fill="#334155" font-size="12.5">Strong on delivery, thinner on testing. Answer 3 was</text>
+    <text x="720" y="486" fill="#334155" font-size="12.5">a description of the problem rather than a solution.</text>
+    <rect x="1204" y="460" width="52" height="32" rx="8" fill="#DCFCE7"/>
+    <text x="1230" y="482" fill="#15803D" font-size="16" text-anchor="middle" font-weight="700">8.1</text>
+    <rect x="1330" y="462" width="94" height="28" rx="14" fill="#DCFCE7"/>
+    <text x="1377" y="480" fill="#15803D" font-size="11" text-anchor="middle" font-weight="700">SHORTLISTED</text>
+
+    <rect x="288" y="534" width="1124" height="92" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <circle cx="332" cy="580" r="19" fill="#F1F5F9"/>
+    <text x="332" y="586" fill="#64748B" font-size="14" text-anchor="middle" font-weight="700">KM</text>
+    <text x="366" y="574" fill="#0F172A" font-size="15" font-weight="600">Kwame Mensah</text>
+    <text x="366" y="596" fill="#64748B" font-size="12">2 yrs Flutter · Accra · answered 3 of 4</text>
+    <text x="720" y="570" fill="#334155" font-size="12.5">CV lists the right frameworks, but the screening</text>
+    <text x="720" y="590" fill="#334155" font-size="12.5">answers stayed general and one was left blank.</text>
+    <rect x="1204" y="564" width="52" height="32" rx="8" fill="#FEF3C7"/>
+    <text x="1230" y="586" fill="#B45309" font-size="16" text-anchor="middle" font-weight="700">5.6</text>
+    <rect x="1354" y="566" width="70" height="28" rx="14" fill="#DBEAFE"/>
+    <text x="1389" y="584" fill="#1D4ED8" font-size="11" text-anchor="middle" font-weight="700">NEW</text>
+
+    <rect x="288" y="638" width="1124" height="92" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <circle cx="332" cy="684" r="19" fill="#F1F5F9"/>
+    <text x="332" y="690" fill="#64748B" font-size="14" text-anchor="middle" font-weight="700">RN</text>
+    <text x="366" y="678" fill="#0F172A" font-size="15" font-weight="600">Rita Nwosu</text>
+    <text x="366" y="700" fill="#64748B" font-size="12">Keyword match only · answered 1 of 4</text>
+    <text x="720" y="674" fill="#334155" font-size="12.5">"Flutter" appears once, in a list of skills. No project</text>
+    <text x="720" y="694" fill="#334155" font-size="12.5">evidence and three screening questions unanswered.</text>
+    <rect x="1204" y="668" width="52" height="32" rx="8" fill="#FEE2E2"/>
+    <text x="1230" y="690" fill="#DC2626" font-size="16" text-anchor="middle" font-weight="700">2.3</text>
+    <rect x="1338" y="670" width="86" height="28" rx="14" fill="#FEE2E2"/>
+    <text x="1381" y="688" fill="#DC2626" font-size="11" text-anchor="middle" font-weight="700">REJECTED</text>
+  </g>
+
+  <text x="312" y="782" fill="#94A3B8" font-size="12">Showing 4 of 148 · you decide every move; auto-reject is off</text>
+</svg>

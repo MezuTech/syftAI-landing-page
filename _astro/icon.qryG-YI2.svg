@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- ScriptureFlow wordless mark: the same carved Latin cross that heads the
+       Bible reel (see assets/icons/cross_of_christ.svg and StudyMark), lifted
+       out as the brand logo. Transparent ground so it can sit on ink, on a
+       raised tile, or on a press sheet without a box around it. The gold ramp
+       runs pale at the head to full accent at the foot, which is what makes it
+       read as carved metal rather than a flat glyph. -->
+  <defs>
+    <linearGradient id="sfGold" x1="60" y1="8" x2="60" y2="112" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F3E8C4"/>
+      <stop offset="0.55" stop-color="#E8D9A0"/>
+      <stop offset="1" stop-color="#D4AF37"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#sfGold)" d="M 53.20,8.00 L 66.80,8.00 L 65.50,36.50 L 102.00,35.20 L 102.00,48.80 L 65.50,47.50 L 66.80,112.00 L 53.20,112.00 L 54.50,47.50 L 18.00,48.80 L 18.00,35.20 L 54.50,36.50 Z"/>
+</svg>
