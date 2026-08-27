@@ -1,0 +1,61 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+// Layout for the Markdown legal pages. Frontmatter drives the head, the
+// eyebrow and the app skin, so the documents stay plain prose.
+interface Props {
+  frontmatter: {
+    title: string;
+    description: string;
+    updated: string;
+    image?: string;
+    eyebrow?: string;
+    app?: 'scriptureflow' | 'strideai' | 'lovestory' | 'sift';
+    appName?: string;
+    /** Link back to the app page this document belongs to. */
+    backHref?: string;
+    backLabel?: string;
+    sibling?: { href: string; label: string };
+  };
+}
+const { frontmatter: fm } = Astro.props;
+---
+
+<BaseLayout
+  title={fm.title}
+  description={fm.description}
+  image={fm.image}
+  app={fm.app}
+  appName={fm.appName}
+>
+  <section class="border-b border-rule">
+    <div class="shell-narrow pt-16 pb-12 sm:pt-20 sm:pb-14">
+      <p class="label text-faint">{fm.eyebrow ?? 'Legal'}</p>
+      <h1 class="display mt-6 text-display text-ink">{fm.title}</h1>
+      <p class="label mt-7 text-faint">Last updated {fm.updated}</p>
+    </div>
+  </section>
+
+  <div class="shell-narrow prose-doc py-section">
+    <slot />
+  </div>
+
+  <div class="border-t border-rule">
+    <div class="shell-narrow flex flex-wrap gap-x-8 gap-y-3 py-8">
+      {
+        fm.backHref && (
+          <a href={fm.backHref} class="label link-rule text-muted">
+            {fm.backLabel ?? 'Back'}
+          </a>
+        )
+      }
+      {
+        fm.sibling && (
+          <a href={fm.sibling.href} class="label link-rule text-muted">
+            {fm.sibling.label}
+          </a>
+        )
+      }
+    </div>
+  </div>
+</BaseLayout>

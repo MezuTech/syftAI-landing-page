@@ -1,0 +1,71 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import AppIcon from '../app/AppIcon.astro';
+import StatusBadge from '../app/StatusBadge.astro';
+import PlatformTags from '../app/PlatformTags.astro';
+
+// One line in the studio index. `data-accent` scopes this app's brand colour
+// to the row, so hovering ScriptureFlow raises gold and hovering Sift raises
+// blue without any per-app markup.
+interface Props {
+  app: CollectionEntry<'apps'>;
+  index: number;
+}
+const { app, index } = Astro.props;
+const { name, tagline, platforms, status, progress } = app.data;
+const n = String(index).padStart(2, '0');
+---
+
+<li data-accent={app.id} class="border-b border-rule">
+  <a
+    href={`/apps/${app.id}`}
+    class="group relative block outline-none"
+    aria-label={`${name} — ${tagline}`}
+  >
+    <span
+      class="pointer-events-none absolute inset-y-0 left-0 w-[2px] origin-top scale-y-0 bg-accent transition-transform duration-500 ease-out-quart group-hover:scale-y-100 group-focus-visible:scale-y-100"
+    ></span>
+
+    <span
+      class="relative flex items-center gap-4 py-6 pl-0 transition-[padding] duration-500 ease-out-quart group-hover:pl-4 group-focus-visible:pl-4 sm:gap-6 sm:py-7"
+    >
+      <span
+        class="label hidden w-7 shrink-0 text-faint transition-colors duration-300 group-hover:text-accent-strong sm:block"
+        >{n}</span
+      >
+
+      <AppIcon icon={app.data.icon} name={name} class="h-12 w-12" />
+
+      <span class="min-w-0 flex-1">
+        <span class="block text-[1.0625rem] leading-tight font-semibold tracking-[-0.012em] text-ink"
+          >{name}</span
+        >
+        <span class="mt-1.5 block text-[0.9375rem] leading-snug text-muted">{tagline}</span>
+        <span class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1 md:hidden">
+          <PlatformTags platforms={platforms} />
+          <span class="text-faint">·</span>
+          <StatusBadge status={status} progress={progress} showProgress />
+        </span>
+      </span>
+
+      <span class="hidden shrink-0 flex-col items-end gap-2 md:flex">
+        <PlatformTags platforms={platforms} />
+        <StatusBadge status={status} progress={progress} showProgress />
+      </span>
+
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        class="h-4 w-4 shrink-0 text-faint transition duration-300 ease-out-quart group-hover:translate-x-1 group-hover:text-accent-strong group-focus-visible:translate-x-1"
+      >
+        <path
+          d="M5 12h13M12.5 6l6 6-6 6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </span>
+  </a>
+</li>

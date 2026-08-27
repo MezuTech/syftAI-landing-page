@@ -1,0 +1,42 @@
+---
+import { site } from '../../data/site';
+import Reveal from '../site/Reveal.astro';
+
+interface Props {
+  name: string;
+  status: 'in-development' | 'private-beta' | 'live';
+  website?: string;
+}
+const { name, status, website } = Astro.props;
+const mailto = `mailto:${site.email}?subject=${encodeURIComponent(`Early access — ${name}`)}`;
+---
+
+<Reveal class="grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
+  <h2 class="display max-w-[20rem] text-display text-ink">
+    {status === 'live' ? 'Give it a try.' : 'Want it early?'}
+  </h2>
+
+  <div class="max-w-[38rem]">
+    <p class="text-[1.0625rem] leading-relaxed text-body">
+      {
+        status === 'live'
+          ? `${name} is live. If something is broken or missing, tell me and it goes on the list.`
+          : `${name} is not finished. If you want to use it before it is, say so and you go on the early list — a real one, not a launch-day newsletter.`
+      }
+    </p>
+
+    <div class="mt-9 flex flex-wrap items-center gap-x-8 gap-y-5">
+      {
+        website && (
+          <a
+            href={website}
+            class="inline-flex items-center gap-2.5 rounded-full bg-ink px-5 py-2.5 text-[0.9375rem] font-medium text-canvas transition-colors duration-300 hover:bg-ink/85"
+          >
+            Open {name}
+          </a>
+        )
+      }
+      <a href={mailto} class="link-rule text-[0.9375rem] text-ink">{site.email}</a>
+    </div>
+  </div>
+</Reveal>

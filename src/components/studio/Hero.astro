@@ -1,0 +1,45 @@
+---
+import { site } from '../../data/site';
+import Reveal from '../site/Reveal.astro';
+---
+
+<section class="border-b border-rule">
+  <div class="shell pt-20 pb-16 sm:pt-28 sm:pb-24">
+    <Reveal>
+      <p class="label text-faint">{site.name} — {site.role}</p>
+
+      <h1 class="display mt-7 max-w-[54rem] text-hero text-ink">
+        Productivity apps,<br /><em class="italic">built one at a time.</em>
+      </h1>
+
+      <p class="mt-9 max-w-[40rem] text-lead text-body">
+        A one-person studio. Four apps are in progress right now — a scripture
+        reader, a study planner, a story generator and a hiring tool. Dart end
+        to end, which is the only reason one person can keep four of them
+        moving.
+      </p>
+
+      <div class="mt-11 flex flex-wrap items-center gap-x-8 gap-y-5">
+        <a
+          href="#apps"
+          class="group inline-flex items-center gap-2.5 rounded-full bg-ink px-5 py-2.5 text-[0.9375rem] font-medium text-canvas transition-colors duration-300 hover:bg-ink/85"
+        >
+          See the apps
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4 transition-transform duration-300 ease-out-quart group-hover:translate-y-0.5">
+            <path
+              d="M12 5v13M6 11.5l6 6 6-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </a>
+
+        <a href={`mailto:${site.email}`} class="link-rule text-[0.9375rem] text-body">
+          {site.email}
+        </a>
+      </div>
+    </Reveal>
+  </div>
+</section>

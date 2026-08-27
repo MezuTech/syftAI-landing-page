@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- MezuTech mark: an M drawn as one polyline, with the second peak set
+       higher than the first so the letter ascends rather than sits. -->
+  <path d="M18 92 V42 L47 70 L78 26 V92"
+        stroke="currentColor" stroke-width="11"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,32 @@
+---
+import Reveal from '../site/Reveal.astro';
+
+// Native <details>, so this costs no JavaScript and works before hydration
+// would have happened anyway.
+interface Props {
+  faq: readonly { q: string; a: string }[];
+}
+const { faq } = Astro.props;
+---
+
+<Reveal as="div" class="border-t border-rule">
+  {
+    faq.map((item) => (
+      <details class="group border-b border-rule">
+        <summary
+          class="flex cursor-pointer list-none items-start gap-5 py-6 text-[1.0625rem] leading-snug font-medium text-ink [&::-webkit-details-marker]:hidden"
+        >
+          <span class="flex-1">{item.q}</span>
+          <span
+            class="relative mt-1.5 h-3 w-3 shrink-0 text-muted transition-colors duration-300 group-open:text-accent-strong"
+            aria-hidden="true"
+          >
+            <span class="absolute top-1/2 left-0 h-px w-3 -translate-y-1/2 bg-current" />
+            <span class="absolute top-0 left-1/2 h-3 w-px -translate-x-1/2 bg-current transition-transform duration-300 ease-out-quart group-open:scale-y-0" />
+          </span>
+        </summary>
+        <p class="max-w-[42rem] pb-7 text-[1.0625rem] leading-relaxed text-body">{item.a}</p>
+      </details>
+    ))
+  }
+</Reveal>

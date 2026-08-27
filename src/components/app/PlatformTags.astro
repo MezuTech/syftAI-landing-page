@@ -1,0 +1,9 @@
+---
+interface Props {
+  platforms: readonly ('iOS' | 'Android' | 'Web')[];
+  class?: string;
+}
+const { platforms, class: cls = '' } = Astro.props;
+---
+
+<span class={`label text-faint ${cls}`}>{platforms.join(' · ')}</span>

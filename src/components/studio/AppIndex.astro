@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import AppIndexRow from './AppIndexRow.astro';
+import Reveal from '../site/Reveal.astro';
+
+interface Props {
+  /** Omit an app — used on an app page's "other apps" list. */
+  exclude?: string;
+}
+const { exclude } = Astro.props;
+
+const apps = (await getCollection('apps'))
+  .filter((a) => a.id !== exclude)
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<Reveal as="ol" class="border-t border-rule">
+  {apps.map((app) => <AppIndexRow app={app} index={app.data.order} />)}
+</Reveal>

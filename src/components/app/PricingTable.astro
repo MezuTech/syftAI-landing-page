@@ -1,0 +1,61 @@
+---
+import Reveal from '../site/Reveal.astro';
+
+interface Tier {
+  name: string;
+  price: string;
+  period?: string;
+  note: string;
+  includes: readonly string[];
+  featured: boolean;
+  href?: string;
+  cta: string;
+}
+interface Props {
+  tiers: readonly Tier[];
+}
+const { tiers } = Astro.props;
+---
+
+<Reveal>
+  <ul class="grid gap-px overflow-hidden rounded-xl border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-3">
+    {
+      tiers.map((tier) => (
+        <li class={`relative flex flex-col p-7 sm:p-8 ${tier.featured ? 'bg-paper' : 'bg-canvas'}`}>
+          {tier.featured && <span class="absolute inset-x-0 top-0 h-[2px] bg-accent" />}
+
+          <p class="label text-faint">{tier.name}</p>
+
+          <p class="mt-5 flex items-baseline gap-1.5">
+            <span class="display text-title text-ink">{tier.price}</span>
+            {tier.period && <span class="text-[0.9375rem] text-muted">/ {tier.period}</span>}
+          </p>
+
+          <p class="mt-4 text-[0.9375rem] leading-relaxed text-muted">{tier.note}</p>
+
+          <ul class="mt-7 space-y-3 border-t border-rule pt-7">
+            {tier.includes.map((line) => (
+              <li class="flex gap-3 text-[0.9375rem] leading-snug text-body">
+                <span class="mt-[0.55em] h-px w-3 shrink-0 bg-accent" />
+                {line}
+              </li>
+            ))}
+          </ul>
+
+          {tier.href && (
+            <a
+              href={tier.href}
+              class={`mt-8 inline-flex items-center justify-center rounded-full px-5 py-2.5 text-[0.9375rem] font-medium transition-colors duration-300 ${
+                tier.featured
+                  ? 'bg-ink text-canvas hover:bg-ink/85'
+                  : 'border border-rule-strong text-ink hover:bg-well'
+              }`}
+            >
+              {tier.cta}
+            </a>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</Reveal>

@@ -1,0 +1,24 @@
+---
+// Honest status, in place of the ratings and install counts the old site
+// invented. The dot is the app's accent, so the badge belongs to the app.
+interface Props {
+  status: 'in-development' | 'private-beta' | 'live';
+  progress?: number;
+  /** Show the rough percentage next to the label. */
+  showProgress?: boolean;
+  class?: string;
+}
+const LABELS = {
+  'in-development': 'In development',
+  'private-beta': 'Private beta',
+  live: 'Live',
+} as const;
+
+const { status, progress, showProgress = false, class: cls = '' } = Astro.props;
+---
+
+<span class={`label inline-flex items-center gap-2 text-muted ${cls}`}>
+  <span class="h-[5px] w-[5px] shrink-0 rounded-full bg-accent"></span>
+  {LABELS[status]}
+  {showProgress && progress != null && <span class="text-faint">~{progress}%</span>}
+</span>

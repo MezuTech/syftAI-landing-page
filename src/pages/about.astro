@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/site/Section.astro';
+import BuiltWith from '../components/studio/BuiltWith.astro';
+import Contact from '../components/studio/Contact.astro';
+import Reveal from '../components/site/Reveal.astro';
+import { site } from '../data/site';
+
+const PRINCIPLES = [
+  {
+    title: 'One app at a time, finished',
+    body: 'Four are in flight, but only one is ever the one being pushed to done. The others get maintenance. It is slower on paper and it is the only way anything ships.',
+  },
+  {
+    title: 'Narrow beats configurable',
+    body: 'Every settings screen is a decision I failed to make. Each app does one job with strong defaults, and the options that survive are the ones people genuinely disagree about.',
+  },
+  {
+    title: 'On the device where it can be',
+    body: 'LoveStory generates whole novels with the radio off, on a model that lives on the phone. When a feature can run locally, it should — it is faster, it costs nothing to run, and nothing leaves the device.',
+  },
+  {
+    title: 'No numbers I have not earned',
+    body: 'No install counts, no star ratings, no testimonials from people who do not exist. Until an app has real users, its page says it is in development, because it is.',
+  },
+];
+---
+
+<BaseLayout
+  title="About"
+  description={`${site.name} is a one-person studio building productivity apps in Flutter and Dart. How the work gets done, and what it is built on.`}
+>
+  <section class="border-b border-rule">
+    <div class="shell pt-16 pb-14 sm:pt-24 sm:pb-20">
+      <Reveal>
+        <p class="label text-faint">About</p>
+        <h1 class="display mt-7 max-w-[46rem] text-display text-ink">
+          One person,<br /><em class="italic">four codebases.</em>
+        </h1>
+        <div class="mt-9 max-w-[40rem] space-y-6 text-lead text-body">
+          <p>
+            {site.name} is a solo studio. I build productivity apps for problems
+            I have myself — reading scripture without losing the thread,
+            studying without lying to yourself about the hours, reading four
+            hundred applications for one role — and I build the narrowest app
+            that solves them.
+          </p>
+          <p>
+            Everything here is Dart. Flutter on the client, Serverpod on Sift's
+            server, Supabase behind the three mobile apps. That is not
+            minimalism for its own sake: it is the reason one person can keep
+            four codebases moving without a rewrite every time context switches.
+          </p>
+        </div>
+      </Reveal>
+    </div>
+  </section>
+
+  <Section eyebrow="How I work" heading="Four rules that hold.">
+    <Reveal as="ol" class="border-t border-rule">
+      {
+        PRINCIPLES.map((p, i) => (
+          <li class="grid gap-3 border-b border-rule py-7 sm:gap-x-8 sm:py-9 lg:grid-cols-[3rem_1fr_1.35fr]">
+            <span class="label hidden pt-1.5 text-faint lg:block">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <h3 class="max-w-[20rem] text-[1.0625rem] leading-snug font-semibold tracking-[-0.012em] text-ink">
+              {p.title}
+            </h3>
+            <p class="max-w-[36rem] text-[1.0625rem] leading-relaxed text-body">{p.body}</p>
+          </li>
+        ))
+      }
+    </Reveal>
+  </Section>
+
+  <Section eyebrow="Built with" heading="The toolchain.">
+    <BuiltWith />
+  </Section>
+
+  <Section eyebrow="Contact">
+    <Contact />
+  </Section>
+</BaseLayout>

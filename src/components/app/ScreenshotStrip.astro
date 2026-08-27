@@ -1,0 +1,130 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import DeviceFrame from './DeviceFrame.astro';
+import BrowserFrame from './BrowserFrame.astro';
+
+// Screens are dropped into src/assets/apps/<slug>/screens/ as 01.png, 02.png …
+// and appear here with no code change. With none present, the frames render
+// empty with the app mark ghosted in — a placeholder that looks intentional
+// rather than a broken image.
+//
+// SVG screens are supported alongside raster ones. Astro's <Image> cannot
+// optimise SVG (there is nothing to resize), so vectors are emitted as a plain
+// <img> pointed at the same hashed asset URL. Both kinds sort together by
+// filename, so 01.svg and 02.png can sit in one strip.
+interface Props {
+  slug: string;
+  name: string;
+  icon: ImageMetadata;
+  frame: 'phone' | 'browser';
+  url?: string;
+}
+const { slug, name, icon, frame, url } = Astro.props;
+
+const all = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/apps/*/screens/*.{png,jpg,jpeg,webp,avif,svg}',
+  { eager: true },
+);
+
+const screens = Object.entries(all)
+  .filter(([path]) => path.includes(`/apps/${slug}/screens/`))
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([, mod]) => mod.default);
+
+const slots = frame === 'phone' ? 3 : 1;
+const items: (ImageMetadata | null)[] =
+  screens.length > 0 ? screens : Array.from({ length: slots }, () => null);
+
+const host = url?.replace(/^https?:\/\//, '');
+---
+
+{
+  frame === 'phone' ? (
+    <div class="-mx-gutter overflow-x-auto px-gutter pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <ul class="flex w-max gap-5 sm:gap-6">
+        {items.map((img, i) => (
+          <li class="w-[13.5rem] shrink-0 sm:w-[15rem]">
+            <DeviceFrame>
+              {img && img.format === 'svg' ? (
+                <img
+                  src={img.src}
+                  alt={`${name} screenshot ${i + 1}`}
+                  width={img.width}
+                  height={img.height}
+                  class="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              ) : img ? (
+                <Image
+                  src={img}
+                  alt={`${name} screenshot ${i + 1}`}
+                  widths={[240, 480, 720]}
+                  sizes="15rem"
+                  class="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              ) : (
+                <span class="grid h-full w-full place-items-center">
+                  <img
+                    src={icon.src}
+                    width={icon.width}
+                    height={icon.height}
+                    alt=""
+                    aria-hidden="true"
+                    class="w-1/3 opacity-[0.12]"
+                  />
+                </span>
+              )}
+            </DeviceFrame>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ) : (
+    <ul class="grid gap-6">
+      {items.map((img, i) => (
+        <li>
+          <BrowserFrame url={host}>
+            {img && img.format === 'svg' ? (
+              <img
+                src={img.src}
+                alt={`${name} screenshot ${i + 1}`}
+                width={img.width}
+                height={img.height}
+                class="h-full w-full object-cover object-top"
+                loading="lazy"
+              />
+            ) : img ? (
+              <Image
+                src={img}
+                alt={`${name} screenshot ${i + 1}`}
+                widths={[640, 1024, 1600]}
+                sizes="(min-width: 64rem) 62rem, 100vw"
+                class="h-full w-full object-cover object-top"
+                loading="lazy"
+              />
+            ) : (
+              <span class="grid h-full w-full place-items-center">
+                <img
+                  src={icon.src}
+                  width={icon.width}
+                  height={icon.height}
+                  alt=""
+                  aria-hidden="true"
+                  class="w-20 opacity-[0.12]"
+                />
+              </span>
+            )}
+          </BrowserFrame>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+{
+  screens.length === 0 && (
+    <p class="label mt-5 text-faint">Screens going up as each build settles</p>
+  )
+}

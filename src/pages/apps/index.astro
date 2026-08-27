@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/site/Section.astro';
+import AppIndex from '../../components/studio/AppIndex.astro';
+import Contact from '../../components/studio/Contact.astro';
+import Reveal from '../../components/site/Reveal.astro';
+import { site } from '../../data/site';
+---
+
+<BaseLayout
+  title="Apps"
+  description={`Every app ${site.name} is building — ScriptureFlow, StrideAI, LoveStory and Sift AI — with an honest status on each.`}
+>
+  <section class="border-b border-rule">
+    <div class="shell pt-16 pb-14 sm:pt-24 sm:pb-20">
+      <Reveal>
+        <p class="label text-faint">Apps</p>
+        <h1 class="display mt-7 max-w-[44rem] text-display text-ink">
+          Four apps, and where<br /><em class="italic">each one actually is.</em>
+        </h1>
+        <p class="mt-8 max-w-[38rem] text-lead text-body">
+          Three Flutter apps for phones and one web app. Each page says what the
+          app does, what it is built on, and what is still left — no launch
+          dates I cannot keep.
+        </p>
+      </Reveal>
+    </div>
+  </section>
+
+  <Section divide={false}>
+    <AppIndex />
+  </Section>
+
+  <Section eyebrow="Contact">
+    <Contact />
+  </Section>
+</BaseLayout>

@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/site/Section.astro';
+import AppIndex from '../components/studio/AppIndex.astro';
+---
+
+<BaseLayout
+  title="Page not found"
+  description="That page does not exist."
+  noindex
+>
+  <section class="border-b border-rule">
+    <div class="shell pt-20 pb-16 sm:pt-28 sm:pb-24">
+      <p class="label text-faint">404</p>
+      <h1 class="display mt-7 max-w-[40rem] text-display text-ink">
+        Nothing here.<br /><em class="italic">Something nearby, though.</em>
+      </h1>
+      <p class="mt-8 max-w-[34rem] text-lead text-body">
+        The page you asked for does not exist — the site was restructured, so an
+        old bookmark may be pointing at a URL that has moved.
+      </p>
+      <p class="mt-9">
+        <a href="/" class="link-rule text-[0.9375rem] text-ink">Back to the home page</a>
+      </p>
+    </div>
+  </section>
+
+  <Section eyebrow="The apps" divide={false}>
+    <AppIndex />
+  </Section>
+</BaseLayout>

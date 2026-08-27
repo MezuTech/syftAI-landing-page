@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Sift AI mark: the sieve. Three rules narrowing downward, and the single
+       candidate that made it through. Monoline so it reads at launcher size. -->
+  <g stroke="#2563EB" stroke-width="11" stroke-linecap="round">
+    <path d="M22 34 H98"/>
+    <path d="M34 60 H86" opacity="0.72"/>
+    <path d="M48 86 H72" opacity="0.48"/>
+  </g>
+  <circle cx="60" cy="110" r="7" fill="#10B981"/>
+</svg>

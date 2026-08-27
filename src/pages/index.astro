@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/site/Section.astro';
+import Hero from '../components/studio/Hero.astro';
+import AppIndex from '../components/studio/AppIndex.astro';
+import BuiltWith from '../components/studio/BuiltWith.astro';
+import About from '../components/studio/About.astro';
+import Contact from '../components/studio/Contact.astro';
+import { site } from '../data/site';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: site.name,
+  url: site.url,
+  email: `mailto:${site.email}`,
+  description: site.description,
+  logo: `${site.url}/icon-512.png`,
+  sameAs: [site.github],
+};
+---
+
+<BaseLayout
+  fullTitle={`${site.name} — ${site.tagline}`}
+  title={site.name}
+  description={site.description}
+  schema={schema}
+>
+  <Hero />
+
+  <Section
+    id="apps"
+    eyebrow="The apps"
+    heading="Four in progress."
+    divide={false}
+  >
+    <AppIndex />
+  </Section>
+
+  <Section id="craft" eyebrow="Built with" heading="How they are built.">
+    <BuiltWith />
+  </Section>
+
+  <Section id="about" eyebrow="About">
+    <About />
+  </Section>
+
+  <Section id="contact" eyebrow="Contact">
+    <Contact />
+  </Section>
+</BaseLayout>

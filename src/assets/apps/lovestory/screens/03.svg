@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="824" viewBox="0 0 390 824" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <linearGradient id="c1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E91E63"/><stop offset="100%" stop-color="#FF6B35"/></linearGradient>
+    <linearGradient id="c2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF6B6B"/><stop offset="100%" stop-color="#FF8E53"/></linearGradient>
+    <linearGradient id="c3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7C4DFF"/><stop offset="100%" stop-color="#E91E63"/></linearGradient>
+    <linearGradient id="c4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0F766E"/><stop offset="100%" stop-color="#14B8A6"/></linearGradient>
+  </defs>
+  <rect width="390" height="824" fill="#101B1E"/>
+  <text x="26" y="40" fill="#F2F5F9" font-size="13" font-weight="600">9:41</text>
+  <rect x="318" y="30" width="22" height="11" rx="3" fill="none" stroke="#7C8794"/>
+  <rect x="320" y="32" width="15" height="7" rx="1.5" fill="#F2F5F9"/>
+
+  <text x="26" y="102" fill="#F2F5F9" font-size="26" font-weight="700">Library</text>
+  <circle cx="342" cy="94" r="17" fill="#E91E63"/>
+  <path d="M342 88 v12 M336 94 h12" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- continue reading -->
+  <text x="26" y="146" fill="#7C8794" font-size="10.5" letter-spacing="2" font-weight="600">CONTINUE READING</text>
+  <rect x="26" y="162" width="338" height="112" rx="18" fill="#17252A"/>
+  <rect x="42" y="178" width="66" height="80" rx="8" fill="url(#c1)"/>
+  <text x="75" y="222" fill="#FFFFFF" font-size="20" text-anchor="middle">♥</text>
+  <text x="124" y="200" fill="#F2F5F9" font-size="15.5" font-weight="600">The Late Shift</text>
+  <text x="124" y="220" fill="#9AA5B4" font-size="11.5">Enemies to Lovers · Workplace</text>
+  <rect x="124" y="234" width="200" height="5" rx="2.5" fill="#1B2A2E"/>
+  <rect x="124" y="234" width="76" height="5" rx="2.5" fill="#E91E63"/>
+  <text x="124" y="256" fill="#7C8794" font-size="10.5">Chapter 3 of 8</text>
+  <rect x="286" y="242" width="62" height="22" rx="11" fill="#1B2A2E"/>
+  <text x="317" y="257" fill="#14B8A6" font-size="9.5" text-anchor="middle" font-weight="600">OFFLINE</text>
+
+  <text x="26" y="316" fill="#7C8794" font-size="10.5" letter-spacing="2" font-weight="600">YOUR STORIES</text>
+  <text x="364" y="316" fill="#E91E63" font-size="11.5" text-anchor="end" font-weight="600">Favourites</text>
+
+  <!-- grid -->
+  <g>
+    <rect x="26" y="332" width="160" height="196" rx="16" fill="url(#c2)"/>
+    <text x="106" y="424" fill="#FFFFFF" font-size="26" text-anchor="middle" opacity="0.9">♥</text>
+    <rect x="26" y="470" width="160" height="58" rx="0" fill="#101B1E" fill-opacity="0.55"/>
+    <text x="42" y="494" fill="#FFFFFF" font-size="13" font-weight="600">Second Summer</text>
+    <text x="42" y="512" fill="#CDD5DE" font-size="10.5">Second Chance · 6 ch</text>
+
+    <rect x="204" y="332" width="160" height="196" rx="16" fill="url(#c3)"/>
+    <text x="284" y="424" fill="#FFFFFF" font-size="26" text-anchor="middle" opacity="0.9">♥</text>
+    <rect x="204" y="470" width="160" height="58" fill="#101B1E" fill-opacity="0.55"/>
+    <text x="220" y="494" fill="#FFFFFF" font-size="13" font-weight="600">The Understudy</text>
+    <text x="220" y="512" fill="#CDD5DE" font-size="10.5">Fake Dating · 10 ch</text>
+
+    <rect x="26" y="544" width="160" height="196" rx="16" fill="url(#c4)"/>
+    <text x="106" y="636" fill="#FFFFFF" font-size="26" text-anchor="middle" opacity="0.9">♥</text>
+    <rect x="26" y="682" width="160" height="58" fill="#101B1E" fill-opacity="0.55"/>
+    <text x="42" y="706" fill="#FFFFFF" font-size="13" font-weight="600">Harmattan</text>
+    <text x="42" y="724" fill="#CDD5DE" font-size="10.5">Slow Burn · 8 ch</text>
+
+    <rect x="204" y="544" width="160" height="196" rx="16" fill="#17252A" stroke="#233A40" stroke-dasharray="5 5"/>
+    <circle cx="284" cy="626" r="22" fill="#1B2A2E"/>
+    <path d="M284 616 v20 M274 626 h20" stroke="#E91E63" stroke-width="2.4" stroke-linecap="round"/>
+    <text x="284" y="672" fill="#9AA5B4" font-size="12" text-anchor="middle">Write another</text>
+  </g>
+
+  <rect x="0" y="760" width="390" height="64" fill="#17252A"/>
+  <line x1="0" y1="760" x2="390" y2="760" stroke="#233A40"/>
+  <text x="78" y="812" fill="#E91E63" font-size="9.5" text-anchor="middle" font-weight="600">Library</text>
+  <text x="195" y="812" fill="#7C8794" font-size="9.5" text-anchor="middle">Discover</text>
+  <text x="312" y="812" fill="#7C8794" font-size="9.5" text-anchor="middle">You</text>
+  <rect x="68" y="782" width="20" height="14" rx="3" fill="#E91E63"/>
+  <circle cx="195" cy="789" r="8" fill="none" stroke="#7C8794" stroke-width="1.6"/>
+  <circle cx="312" cy="789" r="8" fill="none" stroke="#7C8794" stroke-width="1.6"/>
+  <rect x="128" y="812" width="134" height="4" rx="2" fill="#233A40"/>
+</svg>

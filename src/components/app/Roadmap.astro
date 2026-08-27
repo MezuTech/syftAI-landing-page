@@ -1,0 +1,61 @@
+---
+import Reveal from '../site/Reveal.astro';
+
+interface Props {
+  roadmap: readonly { label: string; done: boolean }[];
+  progress?: number;
+}
+const { roadmap, progress } = Astro.props;
+const done = roadmap.filter((r) => r.done).length;
+/** Only the first unfinished milestone is "next"; the rest are queued. */
+const nextIndex = roadmap.findIndex((r) => !r.done);
+---
+
+<Reveal class="grid gap-10 lg:grid-cols-[1fr_1.35fr] lg:gap-20">
+  <div>
+    {
+      progress != null && (
+        <>
+          <p class="display text-display text-ink">{progress}%</p>
+          <div class="mt-5 h-[3px] w-full max-w-[16rem] overflow-hidden rounded-full bg-rule">
+            <span class="block h-full rounded-full bg-accent" style={`width:${progress}%`} />
+          </div>
+        </>
+      )
+    }
+    <p class="label mt-5 text-faint">{done} of {roadmap.length} milestones done</p>
+  </div>
+
+  <ol class="border-t border-rule">
+    {
+      roadmap.map((item, i) => (
+        <li class="flex items-center gap-4 border-b border-rule py-4">
+          {item.done ? (
+            <span class="grid h-4 w-4 shrink-0 place-items-center rounded-full bg-accent">
+              <svg viewBox="0 0 12 12" aria-hidden="true" class="h-2.5 w-2.5 text-accent-ink">
+                <path
+                  d="M2.5 6.2 4.7 8.4 9.5 3.6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          ) : (
+            <span class="h-4 w-4 shrink-0 rounded-full border border-rule-strong" />
+          )}
+          <span
+            class={`text-[1.0625rem] ${item.done ? 'text-body' : 'text-muted'}`}
+          >
+            {item.label}
+          </span>
+          <span class="label ml-auto shrink-0 text-faint">
+            {item.done ? 'Done' : i === nextIndex ? 'Next' : 'Planned'}
+          </span>
+        </li>
+      ))
+    }
+  </ol>
+</Reveal>

@@ -1,0 +1,85 @@
+---
+import '@fontsource-variable/instrument-sans';
+import '@fontsource/instrument-serif';
+import '@fontsource/instrument-serif/400-italic.css';
+import '@fontsource-variable/jetbrains-mono';
+import '../styles/global.css';
+
+import Nav from '../components/site/Nav.astro';
+import Footer from '../components/site/Footer.astro';
+import Seo from '../components/site/Seo.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  fullTitle?: string;
+  image?: string;
+  noindex?: boolean;
+  schema?: Record<string, unknown>;
+  /** Repaints the shared tokens in an app's brand colours. See global.css. */
+  app?: 'scriptureflow' | 'strideai' | 'lovestory' | 'sift';
+  appName?: string;
+}
+
+const { app, appName, ...seo } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" data-app={app} data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta name="theme-color" content="#FAF8F4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)" />
+
+    <Seo {...seo} />
+
+    <script is:inline>
+      // Resolve the theme before first paint so there is never a flash of the
+      // wrong one. `data-theme-pref` is what the toggle reads back. Every app
+      // skin has a tuned light and dark variant, so the visitor's OS
+      // preference is always honoured — an app page never forces a mode.
+      (function () {
+        var root = document.documentElement;
+        var pref = 'system';
+        try {
+          pref = localStorage.getItem('theme') || 'system';
+        } catch (e) {}
+        var dark =
+          pref === 'system'
+            ? window.matchMedia('(prefers-color-scheme: dark)').matches
+            : pref === 'dark';
+        root.dataset.theme = dark ? 'dark' : 'light';
+        root.dataset.themePref = pref;
+        // Scripting is alive, so the reveal-on-scroll blocks may start hidden.
+        // Without this flag every .reveal stays visible, which is what a
+        // no-JS visitor must get instead of a blank page.
+        root.dataset.js = '';
+      })();
+    </script>
+  </head>
+
+  <body class="min-h-dvh">
+    <a
+      href="#main"
+      class="label sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:rounded focus:bg-ink focus:px-3 focus:py-2 focus:text-canvas"
+    >
+      Skip to content
+    </a>
+
+    <Nav context={app ? 'app' : 'studio'} appName={appName} />
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>

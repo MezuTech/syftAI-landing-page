@@ -1,0 +1,31 @@
+---
+interface Props {
+  /** Show the wordmark next to the mark. */
+  wordmark?: boolean;
+  class?: string;
+}
+const { wordmark = true, class: cls = '' } = Astro.props;
+---
+
+<span class={`inline-flex items-center gap-2.5 ${cls}`}>
+  <svg
+    viewBox="0 0 120 120"
+    fill="none"
+    aria-hidden="true"
+    class="h-[1.35em] w-[1.35em] shrink-0 text-ink"
+  >
+    <path
+      d="M18 92 V42 L47 70 L78 26 V92"
+      stroke="currentColor"
+      stroke-width="11"
+      stroke-linecap="round"
+      stroke-linejoin="round"></path>
+  </svg>
+  {
+    wordmark && (
+      <span class="text-[0.9375rem] font-semibold tracking-[-0.01em] text-ink">
+        MezuTech
+      </span>
+    )
+  }
+</span>

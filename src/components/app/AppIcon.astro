@@ -1,0 +1,28 @@
+---
+import type { ImageMetadata } from 'astro';
+
+// Every mark is a transparent square SVG, so they all get the same tile. The
+// tile ground is a token (`--tile`), which lets ScriptureFlow's gold cross sit
+// on ink the way it was drawn while the others sit on paper.
+interface Props {
+  icon: ImageMetadata;
+  name: string;
+  /** Tailwind size classes for the tile. */
+  class?: string;
+}
+const { icon, name, class: cls = 'h-11 w-11' } = Astro.props;
+---
+
+<span
+  class={`inline-grid shrink-0 place-items-center rounded-[26%] bg-tile ring-1 ring-rule/70 ring-inset ${cls}`}
+>
+  <img
+    src={icon.src}
+    width={icon.width}
+    height={icon.height}
+    alt={`${name} app icon`}
+    class="h-[64%] w-[64%]"
+    loading="lazy"
+    decoding="async"
+  />
+</span>

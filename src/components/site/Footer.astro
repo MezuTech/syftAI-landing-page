@@ -1,0 +1,72 @@
+---
+import Logo from './Logo.astro';
+import { site } from '../../data/site';
+import { getCollection } from 'astro:content';
+
+const apps = (await getCollection('apps')).sort((a, b) => a.data.order - b.data.order);
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-section border-t border-rule">
+  <div class="shell py-12 sm:py-16">
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="lg:col-span-2">
+        <Logo />
+        <p class="mt-3 max-w-xs text-sm leading-relaxed text-muted">
+          {site.tagline} Written in Dart, shipped from a one-person studio.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="label text-faint">Apps</h2>
+        <ul class="mt-3 space-y-2">
+          {
+            apps.map((app) => (
+              <li>
+                <a href={`/apps/${app.id}`} class="link-rule text-sm text-body hover:text-ink">
+                  {app.data.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="label text-faint">Studio</h2>
+        <ul class="mt-3 space-y-2">
+          <li>
+            <a href="/about" class="link-rule text-sm text-body hover:text-ink">About</a>
+          </li>
+          <li>
+            <a href={`mailto:${site.email}`} class="link-rule text-sm text-body hover:text-ink">
+              Email
+            </a>
+          </li>
+          <li>
+            <a
+              href={site.github}
+              rel="me noopener"
+              class="link-rule text-sm text-body hover:text-ink"
+            >
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a href="/privacy" class="link-rule text-sm text-body hover:text-ink">Privacy</a>
+          </li>
+          <li>
+            <a href="/terms" class="link-rule text-sm text-body hover:text-ink">Terms</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="mt-12 flex flex-col gap-2 border-t border-rule pt-6 sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p class="label text-faint">© {year} {site.name}</p>
+      <p class="label text-faint">{site.domain}</p>
+    </div>
+  </div>
+</footer>

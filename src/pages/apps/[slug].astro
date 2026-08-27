@@ -1,0 +1,142 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/site/Section.astro';
+import AppHero from '../../components/app/AppHero.astro';
+import ScreenshotStrip from '../../components/app/ScreenshotStrip.astro';
+import FeatureList from '../../components/app/FeatureList.astro';
+import UnderTheHood from '../../components/app/UnderTheHood.astro';
+import Roadmap from '../../components/app/Roadmap.astro';
+import PricingTable from '../../components/app/PricingTable.astro';
+import FaqList from '../../components/app/FaqList.astro';
+import AppCta from '../../components/app/AppCta.astro';
+import AppIndex from '../../components/studio/AppIndex.astro';
+import Reveal from '../../components/site/Reveal.astro';
+import { site } from '../../data/site';
+
+export async function getStaticPaths() {
+  const apps = await getCollection('apps');
+  return apps.map((app) => ({ params: { slug: app.id }, props: { app } }));
+}
+
+const { app } = Astro.props;
+const d = app.data;
+const { Content } = await render(app);
+
+const OS: Record<string, string> = { iOS: 'iOS', Android: 'Android', Web: 'Web' };
+
+const schema: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: d.name,
+  url: `${site.url}/apps/${app.id}`,
+  applicationCategory: 'ProductivityApplication',
+  operatingSystem: d.platforms.map((p) => OS[p]).join(', '),
+  description: d.summary,
+  author: { '@type': 'Organization', name: site.name, url: site.url },
+  ...(d.website ? { installUrl: d.website } : {}),
+  ...(d.pricing
+    ? {
+        offers: d.pricing.map((t) => ({
+          '@type': 'Offer',
+          name: t.name,
+          price: t.price.replace(/[^0-9.]/g, ''),
+          priceCurrency: 'USD',
+          ...(t.href ? { url: t.href } : {}),
+        })),
+      }
+    : {}),
+};
+---
+
+<BaseLayout
+  title={`${d.name} — ${d.tagline}`}
+  description={d.summary}
+  image={`/og/${app.id}.png`}
+  app={app.id as 'scriptureflow' | 'strideai' | 'lovestory' | 'sift'}
+  appName={d.name}
+  schema={schema}
+>
+  <AppHero
+    name={d.name}
+    order={d.order}
+    tagline={d.tagline}
+    summary={d.summary}
+    status={d.status}
+    progress={d.progress}
+    platforms={d.platforms}
+    icon={d.icon}
+    website={d.website}
+  />
+
+  <Section eyebrow="Screens" divide={false}>
+    <ScreenshotStrip
+      slug={app.id}
+      name={d.name}
+      icon={d.icon}
+      frame={d.frame}
+      url={d.website}
+    />
+  </Section>
+
+  <Section eyebrow="Features" heading="What it does.">
+    <FeatureList features={d.features} />
+  </Section>
+
+  <Section eyebrow="Notes" narrow>
+    <Reveal class="prose-doc">
+      <Content />
+    </Reveal>
+  </Section>
+
+  <Section eyebrow="Under the hood" heading="How it is built.">
+    <UnderTheHood stack={d.stack} platforms={d.platforms} website={d.website} />
+  </Section>
+
+  {
+    d.roadmap && (
+      <Section eyebrow="Progress" heading="Where it is.">
+        <Roadmap roadmap={d.roadmap} progress={d.progress} />
+      </Section>
+    )
+  }
+
+  {
+    d.pricing && (
+      <Section eyebrow="Pricing" heading="What it costs.">
+        <PricingTable tiers={d.pricing} />
+      </Section>
+    )
+  }
+
+  {
+    d.faq && (
+      <Section eyebrow="Questions" heading="Asked and answered.">
+        <FaqList faq={d.faq} />
+      </Section>
+    )
+  }
+
+  <Section eyebrow="Get in touch">
+    <AppCta name={d.name} status={d.status} website={d.website} />
+  </Section>
+
+  <Section eyebrow={`Also from ${site.name}`} heading="The other three.">
+    <AppIndex exclude={app.id} />
+  </Section>
+
+  {
+    d.legal && (
+      <div class="border-t border-rule">
+        <div class="shell flex flex-wrap gap-x-8 gap-y-3 py-8">
+          <a href={`/apps/${app.id}/privacy`} class="label link-rule text-muted">
+            Privacy policy
+          </a>
+          <a href={`/apps/${app.id}/terms`} class="label link-rule text-muted">
+            Terms of service
+          </a>
+        </div>
+      </div>
+    )
+  }
+</BaseLayout>

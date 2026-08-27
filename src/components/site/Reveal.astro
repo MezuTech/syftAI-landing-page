@@ -1,0 +1,63 @@
+---
+// Wraps children in the one piece of motion on the site: a fade and rise as
+// the block enters the viewport. Disabled outright under reduced-motion by
+// the CSS in global.css, so this script only has to add the flag.
+interface Props {
+  /** Tag to render. Typed loosely because Astro resolves a dynamic tag name
+      at runtime, not through the JSX intrinsic table. */
+  as?: any;
+  delay?: number;
+  class?: string;
+}
+const { as: Tag = 'div', delay = 0, class: cls = '' }: Props = Astro.props;
+---
+
+<Tag
+  class={`reveal ${cls}`}
+  style={delay ? `transition-delay:${delay}ms` : undefined}
+  data-reveal
+>
+  <slot />
+</Tag>
+
+<script>
+  // One observer for the whole page, regardless of how many Reveals there are.
+  const targets = document.querySelectorAll('[data-reveal]');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reduced || !('IntersectionObserver' in window)) {
+    targets.forEach((el) => el.setAttribute('data-shown', ''));
+  } else {
+    // threshold 0 with a bottom inset: a block counts as arrived the moment any
+    // part of it crosses into the viewport. A percentage threshold cannot work
+    // here — several of these blocks are taller than the screen, so 5% of the
+    // element is never simultaneously visible and they would stay hidden for
+    // the whole visit.
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          entry.target.setAttribute('data-shown', '');
+          observer.unobserve(entry.target);
+        }
+      },
+      { rootMargin: '0px 0px -8% 0px', threshold: 0 },
+    );
+    targets.forEach((el) => observer.observe(el));
+
+    // Safety net. The hidden start state is applied by CSS, so anything that
+    // stops the observer from ever firing — a layout that leaves a block out
+    // of the scroll path, a browser quirk — would leave real content at
+    // opacity 0 permanently. After load, reveal whatever is still hidden.
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document
+          .querySelectorAll('[data-reveal]:not([data-shown])')
+          .forEach((el) => {
+            const top = el.getBoundingClientRect().top;
+            if (top < window.innerHeight) el.setAttribute('data-shown', '');
+          });
+      }, 400);
+    });
+  }
+</script>
