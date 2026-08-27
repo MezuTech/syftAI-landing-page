@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../data/base';
 import BaseLayout from './BaseLayout.astro';
 
 // Layout for the Markdown legal pages. Frontmatter drives the head, the
@@ -44,14 +45,14 @@ const { frontmatter: fm } = Astro.props;
     <div class="shell-narrow flex flex-wrap gap-x-8 gap-y-3 py-8">
       {
         fm.backHref && (
-          <a href={fm.backHref} class="label link-rule text-muted">
+          <a href={withBase(fm.backHref)} class="label link-rule text-muted">
             {fm.backLabel ?? 'Back'}
           </a>
         )
       }
       {
         fm.sibling && (
-          <a href={fm.sibling.href} class="label link-rule text-muted">
+          <a href={withBase(fm.sibling.href)} class="label link-rule text-muted">
             {fm.sibling.label}
           </a>
         )

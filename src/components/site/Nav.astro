@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../data/base';
 import Logo from './Logo.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import { site } from '../../data/site';
@@ -15,7 +16,7 @@ const { context = 'studio', appName } = Astro.props;
   class="sticky top-0 z-50 border-b border-rule/70 bg-canvas/85 backdrop-blur-md"
 >
   <nav class="shell flex h-14 items-center justify-between gap-6" aria-label="Primary">
-    <a href="/" class="shrink-0" aria-label={`${site.name} — home`}>
+    <a href={withBase('/')} class="shrink-0" aria-label={`${site.name} — home`}>
       <Logo />
     </a>
 
@@ -25,14 +26,14 @@ const { context = 'studio', appName } = Astro.props;
           <ul class="hidden items-center gap-5 sm:flex sm:gap-7">
             {site.nav.map((item) => (
               <li>
-                <a href={item.href} class="label link-rule text-muted hover:text-ink">
+                <a href={withBase(item.href)} class="label link-rule text-muted hover:text-ink">
                   {item.label}
                 </a>
               </li>
             ))}
           </ul>
         ) : (
-          <a href="/#apps" class="label link-rule hidden text-muted hover:text-ink sm:inline">
+          <a href={withBase('/#apps')} class="label link-rule hidden text-muted hover:text-ink sm:inline">
             <span aria-hidden="true">←</span> All apps
           </a>
         )
@@ -45,7 +46,7 @@ const { context = 'studio', appName } = Astro.props;
       <div class="border-t border-rule/70 sm:hidden">
         <div class="shell flex h-9 items-center justify-between">
           <span class="label text-faint">{appName}</span>
-          <a href="/#apps" class="label text-muted">
+          <a href={withBase('/#apps')} class="label text-muted">
             <span aria-hidden="true">←</span> All apps
           </a>
         </div>

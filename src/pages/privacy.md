@@ -11,7 +11,7 @@ sibling:
 
 This page covers **syftup.com**, the MezuTech website. The apps are separate
 products with their own policies — see [Sift AI's privacy
-policy](/apps/sift/privacy) for the one app that currently handles user data
+policy](../apps/sift/privacy) for the one app that currently handles user data
 through this domain.
 
 ## What this site collects

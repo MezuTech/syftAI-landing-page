@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../data/base';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/site/Section.astro';
 import AppIndex from '../components/studio/AppIndex.astro';
@@ -20,7 +21,7 @@ import AppIndex from '../components/studio/AppIndex.astro';
         old bookmark may be pointing at a URL that has moved.
       </p>
       <p class="mt-9">
-        <a href="/" class="link-rule text-[0.9375rem] text-ink">Back to the home page</a>
+        <a href={withBase('/')} class="link-rule text-[0.9375rem] text-ink">Back to the home page</a>
       </p>
     </div>
   </section>

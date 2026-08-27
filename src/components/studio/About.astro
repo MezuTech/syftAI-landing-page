@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../data/base';
 import Reveal from '../site/Reveal.astro';
 ---
 
@@ -20,7 +21,7 @@ import Reveal from '../site/Reveal.astro';
       When an app ships, its page will change.
     </p>
     <p>
-      <a href="/about" class="link-rule text-ink">More about how I work</a>
+      <a href={withBase('/about')} class="link-rule text-ink">More about how I work</a>
     </p>
   </div>
 </Reveal>

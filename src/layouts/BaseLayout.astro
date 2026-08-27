@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../data/base';
 import '@fontsource-variable/instrument-sans';
 import '@fontsource/instrument-serif';
 import '@fontsource/instrument-serif/400-italic.css';
@@ -31,10 +32,10 @@ const { app, appName, ...seo } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
 
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
+    <link rel="icon" href={withBase('/favicon-32.png')} sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png')} />
+    <link rel="sitemap" href={withBase('/sitemap-index.xml')} />
 
     <meta name="theme-color" content="#FAF8F4" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)" />
