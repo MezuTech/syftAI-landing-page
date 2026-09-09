@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/site/Section.astro';
 import Hero from '../components/studio/Hero.astro';
 import AppIndex from '../components/studio/AppIndex.astro';
-import BuiltWith from '../components/studio/BuiltWith.astro';
 import About from '../components/studio/About.astro';
 import Contact from '../components/studio/Contact.astro';
 import { site } from '../data/site';
@@ -35,10 +34,6 @@ const schema = {
     divide={false}
   >
     <AppIndex />
-  </Section>
-
-  <Section id="craft" eyebrow="Built with" heading="How they are built.">
-    <BuiltWith />
   </Section>
 
   <Section id="about" eyebrow="About">
