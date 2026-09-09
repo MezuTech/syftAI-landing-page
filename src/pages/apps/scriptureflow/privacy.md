@@ -13,7 +13,6 @@ siblings:
   - { href: /apps/scriptureflow/terms, label: Terms of service }
   - { href: /apps/scriptureflow/delete-account, label: Delete your data }
   - { href: /apps/scriptureflow/support, label: Support }
-  - { href: /apps/scriptureflow/acknowledgements, label: Acknowledgements }
 ---
 
 ScriptureFlow is made by MezuTech, a one-person studio. This policy describes

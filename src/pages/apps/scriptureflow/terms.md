@@ -13,7 +13,6 @@ siblings:
   - { href: /apps/scriptureflow/privacy, label: Privacy policy }
   - { href: /apps/scriptureflow/delete-account, label: Delete your data }
   - { href: /apps/scriptureflow/support, label: Support }
-  - { href: /apps/scriptureflow/acknowledgements, label: Acknowledgements }
 ---
 
 These terms are the agreement between you and **MezuTech** ("we", "us") for the
@@ -110,8 +109,7 @@ nothing to moderate — and also that you carry responsibility for what you stor
 The translations included — the Berean Standard Bible, the King James Version,
 the World English Bible, and the American Standard Version — are in the public
 domain, and each is credited in the app. Concordance data derives from
-Strong's lexicon and from openly licensed cross-reference data, credited in
-full on the [acknowledgements page](/apps/scriptureflow/acknowledgements).
+public-domain lexical works.
 
 Charities named in the app's giving section are named as candidates we are
 putting forward for readers to consider. Nothing in the app claims a

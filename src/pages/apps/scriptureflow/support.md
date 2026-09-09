@@ -13,7 +13,6 @@ siblings:
   - { href: /apps/scriptureflow/privacy, label: Privacy policy }
   - { href: /apps/scriptureflow/terms, label: Terms of service }
   - { href: /apps/scriptureflow/delete-account, label: Delete your data }
-  - { href: /apps/scriptureflow/acknowledgements, label: Acknowledgements }
 ---
 
 ScriptureFlow is built by one person. Email
