@@ -4,13 +4,13 @@ title: Website Terms
 description: Terms covering the syftup.com website itself. Each app has its own terms.
 updated: August 25, 2026
 eyebrow: MezuTech · Legal
-sibling:
-  href: /privacy
-  label: Website privacy
+siblings:
+  - { href: /privacy, label: Website privacy }
 ---
 
 These terms cover **syftup.com**, the MezuTech website. Each app has its own
-terms — see [Sift AI's terms of service](../apps/sift/terms).
+terms — see [ScriptureFlow's terms](../apps/scriptureflow/terms) and [Sift AI's
+terms of service](../apps/sift/terms).
 
 ## 1. What this site is
 

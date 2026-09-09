@@ -4,15 +4,14 @@ title: Website Privacy
 description: What syftup.com collects — which is close to nothing. Each app publishes its own policy separately.
 updated: August 25, 2026
 eyebrow: MezuTech · Legal
-sibling:
-  href: /terms
-  label: Website terms
+siblings:
+  - { href: /terms, label: Website terms }
 ---
 
 This page covers **syftup.com**, the MezuTech website. The apps are separate
-products with their own policies — see [Sift AI's privacy
-policy](../apps/sift/privacy) for the one app that currently handles user data
-through this domain.
+products with their own policies — see [ScriptureFlow's privacy
+policy](../apps/scriptureflow/privacy) and [Sift AI's privacy
+policy](../apps/sift/privacy).
 
 ## What this site collects
 

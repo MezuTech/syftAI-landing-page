@@ -9,9 +9,8 @@ app: sift
 appName: Sift AI
 backHref: /apps/sift
 backLabel: Back to Sift AI
-sibling:
-  href: /apps/sift/terms
-  label: Terms of service
+siblings:
+  - { href: /apps/sift/terms, label: Terms of service }
 ---
 
 Welcome to Sift AI. We respect your privacy and are committed to protecting the

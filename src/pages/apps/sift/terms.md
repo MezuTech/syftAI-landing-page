@@ -9,9 +9,8 @@ app: sift
 appName: Sift AI
 backHref: /apps/sift
 backLabel: Back to Sift AI
-sibling:
-  href: /apps/sift/privacy
-  label: Privacy policy
+siblings:
+  - { href: /apps/sift/privacy, label: Privacy policy }
 ---
 
 By using Sift AI ("the Service"), you agree to the following terms and

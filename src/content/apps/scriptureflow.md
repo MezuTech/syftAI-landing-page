@@ -42,6 +42,11 @@ stack:
   - Supabase
   - just_audio
   - Sign in with Apple
+legal:
+  - { href: /apps/scriptureflow/privacy, label: Privacy policy }
+  - { href: /apps/scriptureflow/terms, label: Terms of service }
+  - { href: /apps/scriptureflow/support, label: Support }
+  - { href: /apps/scriptureflow/delete-account, label: Delete your data }
 roadmap:
   - { label: 'Verse reel, narration and word roots', done: true }
   - { label: 'Reading plans, streaks and saved verses', done: true }

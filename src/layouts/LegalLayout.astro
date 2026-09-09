@@ -16,7 +16,9 @@ interface Props {
     /** Link back to the app page this document belongs to. */
     backHref?: string;
     backLabel?: string;
-    sibling?: { href: string; label: string };
+    /** The other documents in the same set. An app with four of them lists
+     *  three here, so a reader never has to go back up to move sideways. */
+    siblings?: { href: string; label: string }[];
   };
 }
 const { frontmatter: fm } = Astro.props;
@@ -51,11 +53,11 @@ const { frontmatter: fm } = Astro.props;
         )
       }
       {
-        fm.sibling && (
-          <a href={withBase(fm.sibling.href)} class="label link-rule text-muted">
-            {fm.sibling.label}
+        (fm.siblings ?? []).map((s) => (
+          <a href={withBase(s.href)} class="label link-rule text-muted">
+            {s.label}
           </a>
-        )
+        ))
       }
     </div>
   </div>

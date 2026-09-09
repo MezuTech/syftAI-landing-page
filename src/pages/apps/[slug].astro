@@ -130,12 +130,11 @@ const schema: Record<string, unknown> = {
     d.legal && (
       <div class="border-t border-rule">
         <div class="shell flex flex-wrap gap-x-8 gap-y-3 py-8">
-          <a href={withBase(`/apps/${app.id}/privacy`)} class="label link-rule text-muted">
-            Privacy policy
-          </a>
-          <a href={withBase(`/apps/${app.id}/terms`)} class="label link-rule text-muted">
-            Terms of service
-          </a>
+          {d.legal.map((doc) => (
+            <a href={withBase(doc.href)} class="label link-rule text-muted">
+              {doc.label}
+            </a>
+          ))}
         </div>
       </div>
     )

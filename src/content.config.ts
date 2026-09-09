@@ -58,8 +58,13 @@ const apps = defineCollection({
       faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
       /** A live URL, when there is one to link to. */
       website: z.url().optional(),
-      /** Whether this app publishes its own privacy policy / terms pages. */
-      legal: z.boolean().default(false),
+      /** The app's own legal documents, listed in the app page footer.
+       *  Written out rather than inferred, because the set differs per app:
+       *  a store-distributed app needs a deletion route and a support page,
+       *  a web app does not. */
+      legal: z
+        .array(z.object({ href: z.string(), label: z.string() }))
+        .optional(),
     }),
 });
 

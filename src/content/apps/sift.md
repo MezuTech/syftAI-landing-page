@@ -12,7 +12,9 @@ platforms: [Web]
 icon: ../../assets/apps/sift/icon.svg
 frame: browser
 website: https://app.syftup.com
-legal: true
+legal:
+  - { href: /apps/sift/privacy, label: Privacy policy }
+  - { href: /apps/sift/terms, label: Terms of service }
 features:
   - title: A score, with its reasoning
     body: >-
