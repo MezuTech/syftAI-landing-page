@@ -13,6 +13,7 @@ siblings:
   - { href: /apps/scriptureflow/privacy, label: Privacy policy }
   - { href: /apps/scriptureflow/terms, label: Terms of service }
   - { href: /apps/scriptureflow/support, label: Support }
+  - { href: /apps/scriptureflow/acknowledgements, label: Acknowledgements }
 ---
 
 You can delete your ScriptureFlow account and everything attached to it. There
