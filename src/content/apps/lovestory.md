@@ -45,6 +45,62 @@ stack:
   - flutter_gemma
   - LiteRT-LM
   - OpenRouter
+legal:
+  - { href: /apps/lovestory/privacy, label: Privacy policy }
+  - { href: /apps/lovestory/terms, label: Terms of service }
+  - { href: /apps/lovestory/support, label: Support }
+  - { href: /apps/lovestory/delete-account, label: Delete your data }
+  - { href: /apps/lovestory/acknowledgements, label: Acknowledgements }
+faq:
+  - q: Does anything I generate leave my phone?
+    a: >-
+      On the on-device path, no — not the trope, not the setting, not a word of
+      the prose. It runs on a model you downloaded once and works with the radio
+      off. On the cloud path the story brief is sent to OpenRouter to be
+      written, but your email, your name and your account identifier are not.
+      If you want a guarantee, generate on device; that is what it is for.
+  - q: What does it cost?
+    a: >-
+      Nothing. Cloud generation spends a credit, you start with five, and the
+      balance returns to five every thirty days. Generating on your own device
+      costs no credits at all. There is no subscription and no in-app purchase
+      in the app today, so there is nothing to buy and nothing to cancel.
+  - q: Do I own the stories it writes?
+    a: >-
+      As between you and us, yes — we claim no ownership and we do not publish
+      them. The honest caveat is that copyright in AI-generated text is
+      unsettled in several countries, so we cannot promise you own a copyright
+      the law may not grant. Another user with a similar brief may also get a
+      similar story.
+  - q: Is it 18+?
+    a: >-
+      Yes. The highest of the three heat levels produces explicit sexual content
+      between adults, so the app is for over-18s. Mature content is switched off
+      by default and stays off until you turn it on. The lower two levels are
+      fade-to-black and clean respectively.
+  - q: Which offline model should I download?
+    a: >-
+      The one marked recommended, currently Qwen 2.5 1.5B. Bigger is not better
+      on a phone — decode speed is limited by memory bandwidth, so every extra
+      gigabyte of weights makes generation proportionally slower. The catalogue
+      runs from 475 MB to 2.4 GB and each card lists the RAM it wants.
+  - q: Why is offline generation so slow?
+    a: >-
+      Because a phone is not a datacentre. A budget device decodes a few tokens
+      a second, and every token read has to pass over the whole weight file. The
+      app sizes offline requests to match — six chapters where the cloud does
+      ten — rather than promising a story the phone will not finish.
+  - q: Why is a story sometimes repetitive or abruptly ended?
+    a: >-
+      Small models hold two to four thousand tokens at once, which is nowhere
+      near a novel. So generation is split: one pass for the outline, then one
+      pass per chapter that sees only the outline and a recap of what came
+      before. That split is what makes a long story possible, and it is also
+      why the seams occasionally show.
+  - q: Can I sign in with Google or Apple?
+    a: >-
+      Not yet. Sign-up is by email address and password only. The social buttons
+      on the sign-up screen are unfinished and do nothing in the current build.
 roadmap:
   - { label: 'Cloud generation and reader', done: true }
   - { label: 'Library, favourites, offline downloads', done: true }
