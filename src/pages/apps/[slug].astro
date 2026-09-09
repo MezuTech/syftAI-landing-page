@@ -6,7 +6,6 @@ import Section from '../../components/site/Section.astro';
 import AppHero from '../../components/app/AppHero.astro';
 import ScreenshotStrip from '../../components/app/ScreenshotStrip.astro';
 import FeatureList from '../../components/app/FeatureList.astro';
-import UnderTheHood from '../../components/app/UnderTheHood.astro';
 import Roadmap from '../../components/app/Roadmap.astro';
 import PricingTable from '../../components/app/PricingTable.astro';
 import FaqList from '../../components/app/FaqList.astro';
@@ -88,10 +87,6 @@ const schema: Record<string, unknown> = {
     <Reveal class="prose-doc">
       <Content />
     </Reveal>
-  </Section>
-
-  <Section eyebrow="Under the hood" heading="How it is built.">
-    <UnderTheHood stack={d.stack} platforms={d.platforms} website={d.website} />
   </Section>
 
   {
