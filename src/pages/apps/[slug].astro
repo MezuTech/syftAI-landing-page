@@ -28,7 +28,7 @@ const { Content } = await render(app);
 // by developers. The stack list is noise to that reader, so the section is
 // dropped there while the other apps keep it. An app that simply lists no
 // stack drops it too, which is why this also guards on the field itself.
-const showStack = app.id !== 'strideai' && Boolean(d.stack);
+const stack = app.id === 'strideai' ? undefined : d.stack;
 
 const OS: Record<string, string> = { iOS: 'iOS', Android: 'Android', Web: 'Web' };
 
@@ -97,9 +97,9 @@ const schema: Record<string, unknown> = {
   </Section>
 
   {
-    showStack && (
+    stack && (
       <Section eyebrow="Under the hood" heading="How it is built.">
-        <UnderTheHood stack={d.stack} platforms={d.platforms} website={d.website} />
+        <UnderTheHood stack={stack} platforms={d.platforms} website={d.website} />
       </Section>
     )
   }

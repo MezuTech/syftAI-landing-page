@@ -4,7 +4,7 @@ import Reveal from '../site/Reveal.astro';
 
 interface Props {
   name: string;
-  status: 'in-development' | 'private-beta' | 'live';
+  status: 'in-development' | 'feature-complete' | 'private-beta' | 'live';
   website?: string;
 }
 const { name, status, website } = Astro.props;

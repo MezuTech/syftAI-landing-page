@@ -2,7 +2,7 @@
 // Honest status, in place of the ratings and install counts the old site
 // invented. The dot is the app's accent, so the badge belongs to the app.
 interface Props {
-  status: 'in-development' | 'private-beta' | 'live';
+  status: 'in-development' | 'feature-complete' | 'private-beta' | 'live';
   progress?: number;
   /** Show the rough percentage next to the label. */
   showProgress?: boolean;
@@ -10,6 +10,7 @@ interface Props {
 }
 const LABELS = {
   'in-development': 'In development',
+  'feature-complete': 'Feature complete',
   'private-beta': 'Private beta',
   live: 'Live',
 } as const;

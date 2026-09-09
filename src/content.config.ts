@@ -18,7 +18,7 @@ const apps = defineCollection({
       tagline: z.string().max(120),
       /** Two or three sentences for the app page hero and meta description. */
       summary: z.string(),
-      status: z.enum(['in-development', 'private-beta', 'live']),
+      status: z.enum(['in-development', 'feature-complete', 'private-beta', 'live']),
       /** Rough completeness. Shown as a bar, so keep it honest. */
       progress: z.number().min(0).max(100).optional(),
       platforms: z.array(z.enum(['iOS', 'Android', 'Web'])).nonempty(),
@@ -35,8 +35,10 @@ const apps = defineCollection({
           }),
         )
         .min(3),
-      /** What it is actually built on. Replaces invented social proof. */
-      stack: z.array(z.string()).nonempty(),
+      /** What it is actually built on. Replaces invented social proof.
+       *  Optional: an app page omits the whole "Under the hood" section when
+       *  the reader it is written for would not care what it is written in. */
+      stack: z.array(z.string()).nonempty().optional(),
       roadmap: z
         .array(z.object({ label: z.string(), done: z.boolean() }))
         .optional(),
