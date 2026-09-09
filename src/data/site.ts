@@ -13,6 +13,7 @@ export const site = {
   /** Ordered — this is the nav. */
   nav: [
     { label: 'Apps', href: '/#apps' },
+    { label: 'Craft', href: '/#craft' },
     { label: 'About', href: '/about' },
   ],
 } as const;

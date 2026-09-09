@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/site/Section.astro';
+import BuiltWith from '../components/studio/BuiltWith.astro';
 import Contact from '../components/studio/Contact.astro';
 import Reveal from '../components/site/Reveal.astro';
 import { site } from '../data/site';
@@ -71,6 +72,10 @@ const PRINCIPLES = [
         ))
       }
     </Reveal>
+  </Section>
+
+  <Section eyebrow="Built with" heading="The toolchain.">
+    <BuiltWith />
   </Section>
 
   <Section eyebrow="Contact">

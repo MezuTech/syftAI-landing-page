@@ -1,0 +1,49 @@
+---
+import Reveal from '../site/Reveal.astro';
+
+// The replacement for the old site's invented social proof. Everything here is
+// something that is genuinely in one of the four codebases.
+const GROUPS = [
+  {
+    label: 'Client',
+    items: ['Flutter', 'Dart', 'Riverpod', 'Bloc', 'get_it', 'go_router'],
+  },
+  {
+    label: 'Backend',
+    items: ['Supabase', 'Postgres + RLS', 'Serverpod', 'Redis'],
+  },
+  {
+    label: 'On-device & AI',
+    items: ['LiteRT-LM', 'Gemma', 'OpenRouter'],
+  },
+  {
+    label: 'Ship',
+    items: ['Paystack', 'AdMob', 'Sign in with Apple', 'GitHub Actions'],
+  },
+] as const;
+---
+
+<Reveal>
+  <p class="max-w-[42rem] text-lead text-body">
+    One language end to end. Every app here is Dart — Flutter on the client,
+    Serverpod on Sift's server — so a pattern worked out in one codebase can be
+    carried into the next instead of relearned.
+  </p>
+
+  <dl class="mt-14 border-t border-rule">
+    {
+      GROUPS.map((group) => (
+        <div class="grid gap-3 border-b border-rule py-6 sm:grid-cols-[9rem_1fr] sm:gap-8 sm:py-7">
+          <dt class="label pt-1 text-faint">{group.label}</dt>
+          <dd class="flex flex-wrap gap-x-2.5 gap-y-2.5">
+            {group.items.map((item) => (
+              <span class="rounded-full border border-rule bg-paper px-3 py-1.5 text-[0.8125rem] text-body">
+                {item}
+              </span>
+            ))}
+          </dd>
+        </div>
+      ))
+    }
+  </dl>
+</Reveal>

@@ -1,0 +1,46 @@
+---
+import Reveal from '../site/Reveal.astro';
+
+interface Props {
+  stack: readonly string[];
+  platforms: readonly string[];
+  website?: string;
+}
+const { stack, platforms, website } = Astro.props;
+const host = website?.replace(/^https?:\/\//, '').replace(/\/$/, '');
+---
+
+<Reveal>
+  <dl class="border-t border-rule">
+    <div class="grid gap-3 border-b border-rule py-6 sm:grid-cols-[9rem_1fr] sm:gap-8">
+      <dt class="label pt-1 text-faint">Built with</dt>
+      <dd class="flex flex-wrap gap-2.5">
+        {
+          stack.map((item) => (
+            <span class="rounded-full border border-rule bg-paper px-3 py-1.5 text-[0.8125rem] text-body">
+              {item}
+            </span>
+          ))
+        }
+      </dd>
+    </div>
+
+    <div class="grid gap-3 border-b border-rule py-6 sm:grid-cols-[9rem_1fr] sm:gap-8">
+      <dt class="label pt-1 text-faint">Platforms</dt>
+      <dd class="text-[1.0625rem] text-body">{platforms.join(', ')}</dd>
+    </div>
+
+    {
+      host && (
+        <div class="grid gap-3 border-b border-rule py-6 sm:grid-cols-[9rem_1fr] sm:gap-8">
+          <dt class="label pt-1 text-faint">Live at</dt>
+          <dd>
+            <a href={website} class="link-rule text-[1.0625rem] text-ink">
+              {host}
+            </a>
+          </dd>
+        </div>
+      )
+    }
+  </dl>
+</Reveal>

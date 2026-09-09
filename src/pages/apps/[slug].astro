@@ -6,6 +6,7 @@ import Section from '../../components/site/Section.astro';
 import AppHero from '../../components/app/AppHero.astro';
 import ScreenshotStrip from '../../components/app/ScreenshotStrip.astro';
 import FeatureList from '../../components/app/FeatureList.astro';
+import UnderTheHood from '../../components/app/UnderTheHood.astro';
 import Roadmap from '../../components/app/Roadmap.astro';
 import PricingTable from '../../components/app/PricingTable.astro';
 import FaqList from '../../components/app/FaqList.astro';
@@ -22,6 +23,12 @@ export async function getStaticPaths() {
 const { app } = Astro.props;
 const d = app.data;
 const { Content } = await render(app);
+
+// StrideAI's page is read by students deciding whether to study with it, not
+// by developers. The stack list is noise to that reader, so the section is
+// dropped there while the other apps keep it. An app that simply lists no
+// stack drops it too, which is why this also guards on the field itself.
+const showStack = app.id !== 'strideai' && Boolean(d.stack);
 
 const OS: Record<string, string> = { iOS: 'iOS', Android: 'Android', Web: 'Web' };
 
@@ -88,6 +95,14 @@ const schema: Record<string, unknown> = {
       <Content />
     </Reveal>
   </Section>
+
+  {
+    showStack && (
+      <Section eyebrow="Under the hood" heading="How it is built.">
+        <UnderTheHood stack={d.stack} platforms={d.platforms} website={d.website} />
+      </Section>
+    )
+  }
 
   {
     d.roadmap && (

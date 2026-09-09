@@ -47,6 +47,11 @@ stack:
   - Postgres + RLS
   - OpenRouter
   - AdMob
+legal:
+  - { href: /apps/strideai/privacy, label: Privacy policy }
+  - { href: /apps/strideai/terms, label: Terms of service }
+  - { href: /apps/strideai/support, label: Support }
+  - { href: /apps/strideai/delete-account, label: Delete your data }
 roadmap:
   - { label: 'Tasks, subjects and study logs', done: true }
   - { label: 'Focus timer and session tracking', done: true }
