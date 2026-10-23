@@ -2,7 +2,7 @@
 layout: ../../../layouts/LegalLayout.astro
 title: ScriptureFlow — Privacy Policy
 description: What ScriptureFlow stores, what leaves your phone, which providers process it, and how to delete all of it.
-updated: September 9, 2026
+updated: October 13, 2026
 eyebrow: ScriptureFlow · Legal
 image: /og/scriptureflow.png
 app: scriptureflow
@@ -74,19 +74,24 @@ The app talks to a small number of services, each for one job.
 - **OpenRouter** — used for two features. *Study sheets*: the verse reference and its public-domain scripture text are sent to a language model to draft the study prose. *Search assist*: when a plain search finds nothing, your search wording is sent to a model, which answers with **verse references only** — the verse text always comes from our own database, never from the model. Your notes, your email, and your account identifier are never sent to a model. We do not permit these providers to train on the content we send.
 - **RevenueCat** — used only if you subscribe. It handles the purchase and tells our server whether your subscription is active. See section 5.
 - **Apple / Google** — sign-in, and payment if you subscribe. We never see your card.
+- **Cloudflare** — serves the narration recordings. See *Narration* below.
 - **Resend** — delivers the six-digit sign-in code to your email address, if you sign up that way.
 
 Requests to language models are made from our own server, never from the app,
 so the app never carries a provider API key and the providers never see your
 device or IP address.
 
-### If narration is enabled in a future release
+### Narration
 
-Narration is not in the current release. If and when it ships, spoken audio is
-either produced on your own device by the operating system's built-in
-text-to-speech, or fetched from a scripture-audio provider by our server, which
-asks for a passage and gets back a file. Either way the passage is what is
-sent — never anything you wrote.
+Narrated verses are recordings we made in advance, one file per verse, served
+from our own address (audio.syftup.com, hosted on Cloudflare). When you press
+play, the app asks for the file for that verse — the request names the
+translation, book, chapter and verse, and like any web request it carries your
+IP address. Nothing you wrote, and no account identifier, is part of it.
+
+Recently played verses are kept in your phone's cache so they play again
+without the network. That cache is capped at 100 MB, and a file not played for
+30 days is removed; the operating system may also clear it at any time.
 
 ## 5. Payments
 
